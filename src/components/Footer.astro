@@ -1,0 +1,52 @@
+---
+import { assets, navItems, specs } from "../data/site";
+---
+
+<footer class="relative overflow-hidden border-t border-white/10 bg-ink-950">
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_18%_10%,rgba(58,98,158,0.24),transparent_30rem)]" aria-hidden="true"></div>
+  <img class="absolute bottom-0 right-0 w-[44rem] max-w-none opacity-10" src={assets.circuitGrid} alt="" />
+
+  <div class="relative mx-auto grid max-w-[1680px] gap-12 px-5 py-14 sm:px-8 lg:grid-cols-[1.05fr_0.72fr_0.9fr] lg:px-16 lg:py-20">
+    <div>
+      <a href="#top" class="flex items-center gap-4 text-2xl font-semibold text-white">
+        <span class="relative block h-9 w-11 rounded border border-white/65 before:absolute before:-right-2 before:-top-2 before:h-9 before:w-11 before:rounded before:border before:border-white/35"></span>
+        <span>Twin Function</span>
+      </a>
+      <p class="mt-7 max-w-md text-lg leading-8 text-white/68">
+        Wi-Fi搭載の乾電池式モバイルバッテリー。日常にも、もしもの時にも、乾電池3本で使える備えを。
+      </p>
+      <a class="yellow-button mt-8 gap-3 px-8 py-4 text-base" href="#purchase">
+        <img class="h-6 w-6 object-contain invert" src={assets.cartIcon} alt="" />
+        購入する
+      </a>
+    </div>
+
+    <nav aria-label="フッターナビゲーション">
+      <p class="eyebrow">Navigation</p>
+      <div class="mt-6 grid gap-4 text-lg font-semibold text-white/78">
+        {navItems.map((item) => (
+          <a class="w-fit transition hover:text-gold-400" href={item.href}>{item.label}</a>
+        ))}
+      </div>
+    </nav>
+
+    <div>
+      <p class="eyebrow">Product spec</p>
+      <div class="mt-6 divide-y divide-white/10 rounded-lg border border-white/10 bg-white/[0.03]">
+        {specs.slice(0, 4).map((spec) => (
+          <div class="grid grid-cols-[7.5rem_1fr] gap-4 px-5 py-4 text-sm">
+            <span class="font-semibold text-white/52">{spec.name}</span>
+            <span class="text-white/82">{spec.value}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <div class="relative border-t border-white/10">
+    <div class="mx-auto flex max-w-[1680px] flex-col gap-4 px-5 py-6 text-xs text-white/48 sm:flex-row sm:items-center sm:justify-between sm:px-8 lg:px-16">
+      <p>© 2026 Twin Function. All rights reserved.</p>
+      <p>Wi-Fi搭載の乾電池式モバイルバッテリー</p>
+    </div>
+  </div>
+</footer>

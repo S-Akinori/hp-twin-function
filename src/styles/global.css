@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+    background: #050b15;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    min-width: 320px;
+    overflow-x: hidden;
+    background:
+      radial-gradient(circle at 18% 0%, rgba(63, 112, 184, 0.22), transparent 34rem),
+      linear-gradient(180deg, #050b15 0%, #07111f 42%, #050b15 100%);
+    color: #f6f9ff;
+    font-feature-settings: "palt";
+  }
+
+  ::selection {
+    background: rgba(247, 189, 17, 0.32);
+    color: #fff;
+  }
+}
+
+@layer components {
+  .section-shell {
+    @apply mx-auto w-full max-w-[1400px] px-5 sm:px-8 lg:px-12;
+  }
+
+  .hairline-panel {
+    @apply border border-white/10 bg-white/[0.035] shadow-insetLine;
+  }
+
+  .yellow-button {
+    @apply inline-flex items-center justify-center rounded-full bg-gold-400 px-7 py-4 text-sm font-bold text-ink-950 shadow-[0_16px_34px_-18px_rgba(255,208,41,0.85)] transition duration-300 hover:-translate-y-0.5 hover:bg-gold-500 active:translate-y-0;
+  }
+
+  .ghost-button {
+    @apply inline-flex items-center justify-center rounded-full border border-white/15 px-7 py-4 text-sm font-semibold text-ice-100 transition duration-300 hover:-translate-y-0.5 hover:border-white/30 hover:bg-white/[0.06] active:translate-y-0;
+  }
+
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.28em] text-gold-400;
+  }
+
+  .feature-card {
+    @apply rounded-[1.35rem] border border-white/[0.22] bg-[linear-gradient(180deg,rgba(15,37,66,0.82),rgba(7,17,31,0.72))] shadow-insetLine backdrop-blur-sm;
+  }
+}
+
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 30;
+  opacity: 0.06;
+  background-image: url("/assets/backgrounds/24_dark_noise_texture.png");
+  background-size: 360px auto;
+  mix-blend-mode: screen;
+}
+
+.soft-grid {
+  background-image:
+    linear-gradient(rgba(157, 185, 231, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(157, 185, 231, 0.055) 1px, transparent 1px);
+  background-size: 42px 42px;
+}
+
+.reveal-up {
+  animation: reveal-up 760ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: calc(var(--delay, 0) * 90ms);
+}
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1023px) {
+  .hero-stage {
+    min-height: 940px;
+  }
+}

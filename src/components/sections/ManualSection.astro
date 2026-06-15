@@ -1,0 +1,40 @@
+---
+import { assets, manualSteps } from "../../data/site";
+---
+
+<section id="manual" class="bg-white text-ink-950">
+  <div class="relative overflow-hidden bg-ink-900 text-white bg-[url(/assets/backgrounds/05_metallic_closeup.png)] bg-cover bg-center px-8 py-20 md:px-20">
+    <div class="relative mx-auto">
+      <div>
+        <p class="eyebrow text-2xl">MANUAL</p>
+        <h2 class="mt-8 text-4xl sm:text-6xl font-semibold">3ステップで、すぐ使える。</h2>
+        <p class="mt-8 text-xl leading-relaxed text-white/88 sm:text-2xl">乾電池を入れてスマホに接続、Wi-Fiをオンにするだけ。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="mx-auto grid max-w-[1680px] gap-0 px-5 py-10 sm:px-8 lg:grid-cols-3 lg:px-16">
+    {manualSteps.map((step) => (
+      <article class="border-ink-950/16 px-6 py-7 lg:border-r lg:last:border-r-0">
+        <div class="flex items-center gap-7">
+          <span class="grid h-16 w-16 shrink-0 place-items-center rounded-full bg-ink-950 text-3xl font-bold text-gold-400">{step.no}</span>
+          <h3 class="text-2xl font-bold tracking-normal sm:text-3xl">{step.title}</h3>
+        </div>
+        <img class="mx-auto mt-7 h-48 w-full object-contain" src={step.image} alt="" />
+        <p class="mt-6 text-xl leading-9 text-ink-950/78">{step.text}</p>
+        <div class="mt-7 flex items-center gap-5">
+          <span class="grid h-16 w-16 place-items-center rounded-full border border-ink-950/28">
+            <img class="h-10 w-10 object-contain" src={step.icon} alt="" />
+          </span>
+          <p class="text-lg font-semibold text-ink-950/78">{step.note}</p>
+        </div>
+      </article>
+    ))}
+  </div>
+  <div class="pb-14 text-center">
+    <a class="inline-flex items-center gap-5 rounded-full border-2 border-gold-500 bg-ink-950 px-12 py-5 text-xl font-bold text-gold-400" href="#purchase">
+      <img class="h-9 w-9 object-contain" src={assets.manualIcon} alt="" />
+      取扱説明書を見る
+    </a>
+  </div>
+</section>

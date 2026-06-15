@@ -1,0 +1,32 @@
+---
+import { assets, ctaFeatures } from "../../data/site";
+---
+
+<section class={`relative overflow-hidden py-20 bg-[url(/assets/backgrounds/product_background.png)] bg-center md:bg-right-top`}>
+  <!-- <img class="absolute top-0 right-0 w-full h-full" src={} alt="Twin Function 本体" /> -->
+  <div class="mx-auto grid mb-4 w-full max-w-[1680px] items-center gap-8 px-5 sm:px-8 lg:grid-cols-[0.9fr_1.1fr] lg:px-16">
+    <div class="relative z-[1]">
+      <h2 class="text-5xl sm:text-6xl leading-[1.18] tracking-normal text-white">
+        日常にも、<br />もしもの時にも。<br /><span class="font-semibold">Twin Function</span>
+      </h2>
+      <div class="mt-12">
+        <a class="yellow-button w-full md:w-1/2 gap-5 px-8 py-4 text-xl" href="#purchase">
+          <img class="h-8 w-8 object-contain invert" src={assets.cartIcon} alt="" />
+          購入する
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class=" bg-ink-950/62 py-9">
+    <div class="mx-auto grid max-w-[1280px] gap-6 px-5 sm:grid-cols-3 sm:px-8">
+      {ctaFeatures.map((item) => (
+        <div class="flex items-center gap-5 border-r border-white/18 max-sm:border-r-0 last:border-r-0">
+          <img class="h-16 w-16 object-contain" src={item.icon} alt="" />
+          <p class="text-2xl font-bold text-white">
+            {item.title}<br /><span class="text-lg font-normal text-white/74">{item.text}</span>
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

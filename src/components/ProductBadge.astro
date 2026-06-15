@@ -1,0 +1,26 @@
+---
+import { assets } from "../data/site";
+
+interface Props {
+  label?: string;
+  href?: string;
+  class?: string;
+}
+
+const { label = "単3乾電池3本対応", href, class: className = "" } = Astro.props;
+const classes = `inline-flex items-center gap-3 rounded-full border border-gold-400 px-6 py-3 font-bold text-gold-400 ${className}`;
+---
+
+{
+  href ? (
+    <a class={classes} href={href}>
+      <img class="h-7 w-7 object-contain" src={assets.batteryIcon} alt="" />
+      {label}
+    </a>
+  ) : (
+    <div class={classes}>
+      <img class="h-7 w-7 object-contain" src={assets.batteryIcon} alt="" />
+      {label}
+    </div>
+  )
+}

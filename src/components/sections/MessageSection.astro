@@ -1,0 +1,25 @@
+---
+import { assets } from "../../data/site";
+---
+
+<section id="message" class="relative min-h-[760px] overflow-hidden bg-[url(/assets/backgrounds/bg-light-up.png)] bg-cover bg-right py-20">
+  <div class="relative mx-auto md:grid grid-cols-2 gap-4 min-h-[620px] w-full max-w-[1680px] items-center px-5 sm:px-8 lg:px-16">
+    <div class="">
+      <p class="eyebrow text-2xl">MESSAGE</p>
+      <div class="mt-7 h-1 w-20 bg-gold-400"></div>
+      <h2 class="mt-12 text-5xl leading-[1.5] font-semibold text-white sm:text-6xl">
+        通信切れも、<br />電池切れも、<br />これ一台で備える。
+      </h2>
+      <img
+        src="/assets/ui/20_yellow_light_divider.png"
+        alt=""
+        class="mt-10 mb-7 w-full"
+      />
+
+      <!-- <ProductBadge href="#features" class="mt-8 border-2 px-8 py-5 text-2xl" label="乾電池3本対応" /> -->
+    </div>
+    <div>
+      <img src={assets.product} alt='twin function' />
+    </div>
+  </div>
+</section>
