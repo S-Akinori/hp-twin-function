@@ -1,0 +1,48 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
+import { assets, specDetails } from "../data/site";
+---
+
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Twin Functionの製品仕様。対応電池、サイズ、重量、Wi-Fi機能などを掲載しています。" />
+    <title>スペック | Twin Function</title>
+  </head>
+  <body>
+    <div class="grain-overlay" aria-hidden="true"></div>
+    <Header />
+    <main>
+      <section class="relative overflow-hidden bg-ink-950 pt-20">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_74%_18%,rgba(73,116,181,0.34),transparent_35rem)]" aria-hidden="true"></div>
+        <div class="relative mx-auto grid min-h-[560px] max-w-[1680px] items-center gap-12 px-5 py-16 sm:px-8 lg:grid-cols-[0.9fr_1.1fr] lg:px-16">
+          <div>
+            <p class="eyebrow text-2xl">Spec</p>
+            <div class="mt-6 h-1 w-20 bg-gold-400"></div>
+            <h1 class="mt-9 text-5xl font-semibold leading-tight text-white sm:text-7xl">製品スペック</h1>
+            <p class="mt-8 max-w-2xl text-xl leading-9 text-white/74">
+              Twin Functionの基本仕様と利用シーンをまとめています。
+            </p>
+          </div>
+          <img class="w-full rounded-lg border border-white/10 object-cover shadow-product" src={assets.productWithBatteries} alt="Twin Function と乾電池3本" />
+        </div>
+      </section>
+
+      <section class="bg-white px-5 py-20 text-ink-950 sm:px-8 lg:px-16">
+        <div class="mx-auto max-w-[1120px] overflow-hidden rounded-xl border border-ink-950/10">
+          {specDetails.map((spec) => (
+            <div class="grid gap-3 border-b border-ink-950/10 px-6 py-5 last:border-b-0 sm:grid-cols-[15rem_1fr] sm:px-8">
+              <dt class="font-bold text-ink-950/62">{spec.name}</dt>
+              <dd class="text-lg font-semibold text-ink-950">{spec.value}</dd>
+            </div>
+          ))}
+        </div>
+      </section>
+    </main>
+    <Footer />
+  </body>
+</html>

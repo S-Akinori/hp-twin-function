@@ -1,0 +1,66 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
+import { assets, storyUses } from "../data/site";
+---
+
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Twin Functionが生まれた背景と、外出・出張・防災で役立つ理由をご紹介します。" />
+    <title>ストーリー | Twin Function</title>
+  </head>
+  <body>
+    <div class="grain-overlay" aria-hidden="true"></div>
+    <Header />
+    <main>
+      <section class="relative overflow-hidden bg-ink-950 pt-20">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_76%_24%,rgba(73,116,181,0.36),transparent_34rem)]" aria-hidden="true"></div>
+        <img class="absolute bottom-0 right-0 hidden w-[48rem] opacity-45 lg:block" src={assets.productSingle} alt="" />
+        <div class="relative mx-auto grid min-h-[620px] max-w-[1680px] items-center px-5 py-16 sm:px-8 lg:px-16">
+          <div class="max-w-4xl">
+            <p class="eyebrow text-2xl">Story</p>
+            <div class="mt-6 h-1 w-20 bg-gold-400"></div>
+            <h1 class="mt-9 text-5xl font-semibold leading-tight text-white sm:text-7xl">
+              充電忘れも、通信不安も、<br />もう持ち歩かない。
+            </h1>
+            <p class="mt-8 max-w-3xl text-xl leading-9 text-white/74">
+              スマートフォンの充電、通信手段、非常時の備え。必要なものをひとつにまとめ、単3乾電池3本で使える安心を目指しました。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-[linear-gradient(180deg,#07111f,#050b15)] px-5 py-20 sm:px-8 lg:px-16">
+        <div class="mx-auto grid max-w-[1320px] gap-8 lg:grid-cols-3">
+          {storyUses.map((item) => (
+            <article class="feature-card p-8 text-center">
+              <div class="mx-auto grid h-28 w-28 place-items-center rounded-full border border-white/30">
+                <img class="h-16 w-16 object-contain" src={item.icon} alt="" />
+              </div>
+              <h2 class="mt-7 text-3xl font-bold text-white">{item.title}</h2>
+              <p class="mt-5 text-lg leading-8 text-white/72">{item.text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section class="bg-white px-5 py-20 text-ink-950 sm:px-8 lg:px-16">
+        <div class="mx-auto grid max-w-[1320px] gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+          <div>
+            <p class="eyebrow">Concept</p>
+            <h2 class="mt-5 text-4xl font-bold leading-tight sm:text-6xl">どこでも手に入る電池で、必要な時にすぐ使える。</h2>
+            <p class="mt-7 text-lg leading-9 text-ink-950/72">
+              充電環境がない場面でも、単3乾電池3本を入れ替えるだけで使える設計です。日常の外出や出張はもちろん、万が一の備えとしても持ちやすいプロダクトです。
+            </p>
+          </div>
+          <img class="w-full rounded-lg border border-ink-950/10 object-cover" src={assets.productWithBatteries} alt="Twin Function と乾電池3本" />
+        </div>
+      </section>
+    </main>
+    <Footer />
+  </body>
+</html>

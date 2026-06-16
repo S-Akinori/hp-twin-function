@@ -1,0 +1,182 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
+import {
+  basicSteps,
+  manualAssets,
+  manualToc,
+  safetyCards,
+  simSteps,
+  simWarnings,
+  troubleshootingCards,
+  wifiHints,
+  wifiSteps,
+} from "../data/manual";
+---
+
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Twin Functionの取扱説明書。乾電池のセット、SIMカード設定、Wi-Fi接続、充電方法、注意事項をご案内します。"
+    />
+    <title>Twin Function - 取扱説明書</title>
+  </head>
+  <body>
+    <div class="grain-overlay" aria-hidden="true"></div>
+    <Header />
+
+    <main id="top">
+      <section class="relative overflow-hidden bg-ink-950 pt-20">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_72%_18%,rgba(73,116,181,0.34),transparent_35rem)]" aria-hidden="true"></div>
+        <img class="absolute bottom-0 right-0 hidden w-[58rem] max-w-none opacity-35 lg:block" src={manualAssets.hero} alt="" />
+        <div class="relative mx-auto grid min-h-[620px] max-w-[1680px] items-center gap-12 px-5 py-16 sm:px-8 lg:grid-cols-[0.9fr_1.1fr] lg:px-16">
+          <div>
+            <p class="eyebrow text-2xl">Manual</p>
+            <div class="mt-6 h-1 w-20 bg-gold-400"></div>
+            <h1 class="mt-8 text-5xl font-semibold leading-tight text-white sm:text-7xl">
+              Twin Function<br />取扱説明書
+            </h1>
+            <p class="mt-7 max-w-2xl text-xl leading-9 text-white/76">
+              基本的な使い方からSIMカード、Wi-Fi接続、トラブルシューティングまで、安全にご利用いただくための情報をまとめました。
+            </p>
+          </div>
+          <img class="relative z-[1] mx-auto w-full max-w-[700px] rounded-lg border border-white/10 object-cover shadow-product lg:hidden" src={manualAssets.hero} alt="Twin Function と乾電池3本" />
+        </div>
+      </section>
+
+      <section class="border-y border-white/10 bg-ink-900/70">
+        <nav class="mx-auto grid max-w-[1680px] gap-3 px-5 py-5 sm:grid-cols-2 sm:px-8 lg:grid-cols-5 lg:px-16" aria-label="取扱説明書目次">
+          {manualToc.map((item) => (
+            <a class="rounded-full border border-white/10 px-5 py-3 text-center text-sm font-semibold text-white/74 transition hover:border-gold-400 hover:text-gold-400" href={item.href}>
+              {item.label}
+            </a>
+          ))}
+        </nav>
+      </section>
+
+      <section id="basic" class="manual-page-section bg-ink-950">
+        <div class="manual-heading-block">
+          <p class="eyebrow">Basic Usage</p>
+          <h2>基本的な使い方</h2>
+        </div>
+        <div class="mt-12 grid gap-6">
+          {basicSteps.map((step) => (
+            <article class="manual-step-row">
+              <div class="manual-step-label">{step.label}</div>
+              <div class="manual-step-content">
+                <img class="h-14 w-14 object-contain" src={step.icon} alt="" />
+                <div>
+                  <div class="flex items-center gap-4">
+                    <span class="manual-number">{step.no}</span>
+                    <h3>{step.title}</h3>
+                  </div>
+                  <p>{step.text}</p>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="sim" class="manual-page-section bg-[linear-gradient(180deg,#07111f,#08182b)]">
+        <div class="manual-heading-block">
+          <p class="eyebrow">SIM Setup</p>
+          <h2>SIMカードのセットアップ方法</h2>
+          <p>Twin FunctionでWi-Fi接続を利用するには、データ通信対応のSIMカードが必要です。</p>
+        </div>
+        <div class="mt-12 grid gap-6">
+          {simSteps.map((step) => (
+            <article class="manual-step-row">
+              <div class="manual-step-label">{step.label}</div>
+              <div class="manual-step-content">
+                <img class="h-14 w-14 object-contain" src="/assets/icons/08_wifi.png" alt="" />
+                <div>
+                  <div class="flex items-center gap-4">
+                    <span class="manual-number">{step.no}</span>
+                    <h3>{step.title}</h3>
+                  </div>
+                  <p>{step.text}</p>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+        <aside class="manual-note warning">
+          <h3>注意事項</h3>
+          <ul>
+            {simWarnings.map((item) => <li>{item}</li>)}
+          </ul>
+        </aside>
+      </section>
+
+      <section id="wifi" class="manual-page-section bg-white text-ink-950">
+        <div class="manual-heading-block light">
+          <p class="eyebrow">Wi-Fi Setup</p>
+          <h2>Wi-Fi接続の詳細手順</h2>
+          <p>スマートフォンからTwin FunctionのWi-Fiネットワークに接続する方法です。</p>
+        </div>
+        <div class="manual-card-grid">
+          {wifiSteps.map((step) => (
+            <article class="manual-light-card">
+              <div class="manual-card-head">
+                <span>{step.no}</span>
+                <h3>{step.title}</h3>
+              </div>
+              <p>{step.text}</p>
+            </article>
+          ))}
+        </div>
+        <aside class="manual-note info light-note">
+          <h3>ヒント</h3>
+          <ul>
+            {wifiHints.map((item) => <li>{item}</li>)}
+          </ul>
+        </aside>
+      </section>
+
+      <section id="safety" class="manual-page-section bg-ink-950">
+        <div class="manual-heading-block">
+          <p class="eyebrow">Safety</p>
+          <h2>ご使用上の注意</h2>
+        </div>
+        <div class="manual-card-grid">
+          {safetyCards.map((card) => (
+            <article class="manual-dark-card">
+              <h3>{card.title}</h3>
+              <p>{card.text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="trouble" class="manual-page-section bg-[linear-gradient(180deg,#07111f,#050b15)]">
+        <div class="manual-heading-block">
+          <p class="eyebrow">Troubleshooting</p>
+          <h2>トラブルシューティング</h2>
+        </div>
+        <div class="manual-card-grid three">
+          {troubleshootingCards.map((card) => (
+            <article class="manual-dark-card">
+              <h3>{card.title}</h3>
+              <p>{card.text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section class="bg-white px-5 py-16 text-center text-ink-950 sm:px-8">
+        <h2 class="text-3xl font-bold sm:text-5xl">製品詳細ページへ戻る</h2>
+        <div class="mt-8 flex justify-center">
+          <a class="yellow-button px-10 py-5 text-base" href="/">製品ページへ戻る</a>
+        </div>
+      </section>
+    </main>
+
+    <Footer />
+  </body>
+</html>

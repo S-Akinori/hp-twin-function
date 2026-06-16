@@ -1,9 +1,9 @@
 export const navItems = [
-  { label: "ストーリー", href: "#story" },
-  { label: "特徴", href: "#features" },
-  { label: "使い方", href: "#manual" },
-  { label: "スペック", href: "#spec" },
-  { label: "FAQ", href: "#purchase" },
+  { label: "ストーリー", href: "/story" },
+  { label: "特徴", href: "/features" },
+  { label: "使い方", href: "/manual" },
+  { label: "スペック", href: "/spec" },
+  { label: "FAQ", href: "/faq" },
 ];
 
 export const heroFeatures = [
@@ -90,6 +90,45 @@ export const specs = [
   { name: "同時接続台数", value: "最大8台" },
   { name: "サイズ", value: "約 80 x 60 x 25 mm" },
   { name: "重量", value: "約120g" },
+];
+
+export const specDetails = [
+  { name: "製品名", value: "Twin Function" },
+  { name: "対応電池", value: "単3形乾電池 x 3本" },
+  { name: "対応充電池", value: "単3形充電池にも対応" },
+  { name: "接続端子", value: "スマートフォンへ直接接続" },
+  { name: "Wi-Fi機能", value: "データ通信対応SIMカード利用時にWi-Fi接続可能" },
+  { name: "同時接続台数", value: "最大8台" },
+  { name: "サイズ", value: "約 80 x 60 x 25 mm" },
+  { name: "重量", value: "約120g" },
+  { name: "想定シーン", value: "外出、出張、防災、旅行、停電時の備え" },
+];
+
+export const faqItems = [
+  {
+    question: "乾電池は何本必要ですか？",
+    answer: "単3形乾電池を3本使用します。日常使いだけでなく、非常時にも入手しやすい電池で使える構成です。",
+  },
+  {
+    question: "充電池は使えますか？",
+    answer: "単3形充電池にも対応しています。使用前に電池の残量や状態を確認してください。",
+  },
+  {
+    question: "ケーブルは必要ですか？",
+    answer: "本体のコネクタをスマートフォンへ直接接続する設計です。対応端末であればケーブルなしで充電できます。",
+  },
+  {
+    question: "Wi-Fiを使うには何が必要ですか？",
+    answer: "データ通信対応のSIMカードが必要です。SIMカードのサイズ、通信契約、通信エリアを事前に確認してください。",
+  },
+  {
+    question: "何台まで接続できますか？",
+    answer: "最大8台までの同時接続を想定しています。通信状況や利用環境により体感速度は変わります。",
+  },
+  {
+    question: "防災用として保管できますか？",
+    answer: "保管時は乾電池を本体から取り外してください。液漏れや故障を避けるため、定期的な動作確認をおすすめします。",
+  },
 ];
 
 export const purchaseFeatures = [

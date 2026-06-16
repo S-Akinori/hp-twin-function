@@ -1,5 +1,9 @@
 ---
 import { assets, navItems, specs } from "../data/site";
+
+const path = Astro.url.pathname;
+const isHome = path === "/";
+const resolveHref = (href: string) => href;
 ---
 
 <footer class="relative overflow-hidden border-t border-white/10 bg-ink-950">
@@ -8,14 +12,14 @@ import { assets, navItems, specs } from "../data/site";
 
   <div class="relative mx-auto grid max-w-[1680px] gap-12 px-5 py-14 sm:px-8 lg:grid-cols-[1.05fr_0.72fr_0.9fr] lg:px-16 lg:py-20">
     <div>
-      <a href="#top" class="flex items-center gap-4 text-2xl font-semibold text-white">
+      <a href={isHome ? "#top" : "/"} class="flex items-center gap-4 text-2xl font-semibold text-white">
         <span class="relative block h-9 w-11 rounded border border-white/65 before:absolute before:-right-2 before:-top-2 before:h-9 before:w-11 before:rounded before:border before:border-white/35"></span>
         <span>Twin Function</span>
       </a>
       <p class="mt-7 max-w-md text-lg leading-8 text-white/68">
         Wi-Fi搭載の乾電池式モバイルバッテリー。日常にも、もしもの時にも、乾電池3本で使える備えを。
       </p>
-      <a class="yellow-button mt-8 gap-3 px-8 py-4 text-base" href="#purchase">
+      <a class="yellow-button mt-8 gap-3 px-8 py-4 text-base" href={isHome ? "#purchase" : "/#purchase"}>
         <img class="h-6 w-6 object-contain invert" src={assets.cartIcon} alt="" />
         購入する
       </a>
@@ -25,7 +29,7 @@ import { assets, navItems, specs } from "../data/site";
       <p class="eyebrow">Navigation</p>
       <div class="mt-6 grid gap-4 text-lg font-semibold text-white/78">
         {navItems.map((item) => (
-          <a class="w-fit transition hover:text-gold-400" href={item.href}>{item.label}</a>
+          <a class="w-fit transition hover:text-gold-400" href={resolveHref(item.href)}>{item.label}</a>
         ))}
       </div>
     </nav>

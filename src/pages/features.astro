@@ -1,0 +1,64 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
+import { assets, featureCards, purchaseFeatures } from "../data/site";
+---
+
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Twin Functionの特徴。乾電池3本対応、Wi-Fi搭載、ケーブル不要の直接充電などをご紹介します。" />
+    <title>特徴 | Twin Function</title>
+  </head>
+  <body>
+    <div class="grain-overlay" aria-hidden="true"></div>
+    <Header />
+    <main>
+      <section class="relative overflow-hidden bg-ink-950 pt-20">
+        <img class="absolute inset-0 h-full w-full object-cover opacity-20" src={assets.circuitGrid} alt="" />
+        <div class="relative mx-auto grid min-h-[620px] max-w-[1680px] items-center gap-12 px-5 py-16 sm:px-8 lg:grid-cols-[0.8fr_1.2fr] lg:px-16">
+          <div>
+            <p class="eyebrow text-2xl">Features</p>
+            <div class="mt-6 h-1 w-20 bg-gold-400"></div>
+            <h1 class="mt-9 text-5xl font-semibold leading-tight text-white sm:text-7xl">3つの安心</h1>
+            <p class="mt-8 max-w-2xl text-xl leading-9 text-white/74">
+              日常も、もしもの時も。Twin Functionは、つながる、充電できる、備えられる安心を小さな筐体にまとめました。
+            </p>
+          </div>
+          <img class="w-full rounded-lg border border-white/10 object-cover shadow-product" src={assets.productSingle} alt="Twin Function 本体" />
+        </div>
+      </section>
+
+      <section class="bg-[linear-gradient(180deg,#07111f,#050b15)] px-5 py-20 sm:px-8 lg:px-16">
+        <div class="mx-auto grid max-w-[1320px] gap-7 lg:grid-cols-3">
+          {featureCards.map((card) => (
+            <article class="feature-card p-8">
+              <p class="text-4xl font-bold text-gold-400">{card.no}</p>
+              <div class="mt-8 grid h-32 w-32 place-items-center rounded-full border border-gold-400">
+                <img class="h-20 w-20 object-contain" src={card.icon} alt="" />
+              </div>
+              <h2 class="mt-8 text-3xl font-bold text-white">{card.title}</h2>
+              <div class="mt-5 h-0.5 w-12 bg-gold-400"></div>
+              <p class="mt-6 text-lg leading-8 text-white/72">{card.text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section class="bg-white px-5 py-20 text-ink-950 sm:px-8 lg:px-16">
+        <div class="mx-auto grid max-w-[1320px] gap-5 md:grid-cols-3">
+          {purchaseFeatures.map((item) => (
+            <div class="rounded-lg border border-ink-950/10 p-7">
+              <img class="h-14 w-14 object-contain" src={item.icon} alt="" />
+              <p class="mt-5 text-2xl font-bold">{item.label}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+    </main>
+    <Footer />
+  </body>
+</html>

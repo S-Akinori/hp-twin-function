@@ -52,6 +52,122 @@
   .feature-card {
     @apply rounded-[1.35rem] border border-white/[0.22] bg-[linear-gradient(180deg,rgba(15,37,66,0.82),rgba(7,17,31,0.72))] shadow-insetLine backdrop-blur-sm;
   }
+
+  .manual-page-section {
+    @apply mx-auto w-full px-5 py-20 sm:px-8 lg:px-16;
+  }
+
+  .manual-page-section > * {
+    @apply mx-auto max-w-[1320px];
+  }
+
+  .manual-heading-block h2 {
+    @apply mt-5 text-4xl font-semibold leading-tight text-white sm:text-6xl;
+  }
+
+  .manual-heading-block p:not(.eyebrow) {
+    @apply mt-5 max-w-3xl text-lg leading-8 text-white/70;
+  }
+
+  .manual-heading-block.light h2 {
+    @apply text-ink-950;
+  }
+
+  .manual-heading-block.light p:not(.eyebrow) {
+    @apply text-ink-950/70;
+  }
+
+  .manual-step-row {
+    @apply grid gap-4 rounded-lg border border-white/10 bg-white/[0.035] p-5 shadow-insetLine sm:grid-cols-[9rem_1fr] sm:p-6;
+  }
+
+  .manual-step-label {
+    @apply flex min-h-24 items-center justify-center rounded-md bg-ink-900 text-lg font-bold uppercase tracking-[0.18em] text-gold-400;
+  }
+
+  .manual-step-content {
+    @apply flex gap-5 sm:items-start;
+  }
+
+  .manual-step-content h3 {
+    @apply text-2xl font-bold text-white;
+  }
+
+  .manual-step-content p {
+    @apply mt-3 text-base leading-8 text-white/[0.72];
+  }
+
+  .manual-number {
+    @apply grid h-10 w-10 shrink-0 place-items-center rounded-full bg-gold-400 text-lg font-bold text-ink-950;
+  }
+
+  .manual-note {
+    @apply mt-10 rounded-lg border p-6;
+  }
+
+  .manual-note h3 {
+    @apply text-2xl font-bold;
+  }
+
+  .manual-note ul {
+    @apply mt-4 grid gap-3 pl-5 text-base leading-7;
+  }
+
+  .manual-note li {
+    @apply list-disc;
+  }
+
+  .manual-note.warning {
+    @apply border-gold-400/40 bg-gold-400/[0.08] text-white;
+  }
+
+  .manual-note.info {
+    @apply border-sky-300/30 bg-sky-300/[0.08] text-white;
+  }
+
+  .manual-note.light-note {
+    @apply border-ink-950/15 bg-ink-950/[0.04] text-ink-950;
+  }
+
+  .manual-card-grid {
+    @apply mx-auto mt-12 grid max-w-[1320px] gap-5 md:grid-cols-2;
+  }
+
+  .manual-card-grid.three {
+    @apply lg:grid-cols-3;
+  }
+
+  .manual-dark-card {
+    @apply rounded-lg border border-white/10 bg-white/[0.035] p-6 shadow-insetLine;
+  }
+
+  .manual-dark-card h3 {
+    @apply text-2xl font-bold text-white;
+  }
+
+  .manual-dark-card p {
+    @apply mt-4 text-base leading-8 text-white/70;
+  }
+
+  .manual-light-card {
+    @apply rounded-lg border border-ink-950/10 bg-ink-950/[0.035] p-6;
+  }
+
+  .manual-card-head {
+    @apply flex items-center gap-4;
+  }
+
+  .manual-card-head span {
+    @apply grid h-11 w-11 shrink-0 place-items-center rounded-full bg-ink-950 text-lg font-bold text-gold-400;
+  }
+
+  .manual-card-head h3 {
+    @apply text-2xl font-bold;
+  }
+
+  .manual-light-card p {
+    @apply mt-4 text-base leading-8 text-ink-950/[0.72];
+  }
 }
 
 .grain-overlay {
@@ -75,6 +191,55 @@
 .reveal-up {
   animation: reveal-up 760ms cubic-bezier(0.16, 1, 0.3, 1) both;
   animation-delay: calc(var(--delay, 0) * 90ms);
+}
+
+.js-scroll-ready .io-section {
+  opacity: 0;
+  transform: translateY(34px);
+  transition:
+    opacity 900ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 900ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.js-scroll-ready .io-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.js-scroll-ready .io-item {
+  opacity: 0;
+  filter: blur(6px);
+  transform: translateY(24px);
+  transition:
+    opacity 760ms cubic-bezier(0.16, 1, 0.3, 1) var(--io-delay, 0ms),
+    filter 760ms cubic-bezier(0.16, 1, 0.3, 1) var(--io-delay, 0ms),
+    transform 760ms cubic-bezier(0.16, 1, 0.3, 1) var(--io-delay, 0ms);
+  will-change: opacity, filter, transform;
+}
+
+.js-scroll-ready .io-section.is-visible .io-item {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+}
+
+.js-scroll-ready .io-section img.io-item {
+  transform: translateY(26px) scale(0.985);
+}
+
+.js-scroll-ready .io-section.is-visible img.io-item {
+  transform: translateY(0) scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .io-section,
+  .io-item {
+    opacity: 1 !important;
+    filter: none !important;
+    transform: none !important;
+    transition: none !important;
+  }
 }
 
 @keyframes reveal-up {
