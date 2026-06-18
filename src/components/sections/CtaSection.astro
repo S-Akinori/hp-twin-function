@@ -1,5 +1,6 @@
 ---
 import { assets, ctaFeatures } from "../../data/site";
+import ButtonLink from "../ui/ButtonLink.astro";
 ---
 
 <section class={`relative overflow-hidden py-20 bg-[url(/assets/backgrounds/product_background.png)] bg-center md:bg-right-top`}>
@@ -10,10 +11,10 @@ import { assets, ctaFeatures } from "../../data/site";
         日常にも、<br />もしもの時にも。<br /><span class="font-semibold">Twin Function</span>
       </h2>
       <div class="mt-12">
-        <a class="yellow-button w-full md:w-1/2 gap-5 px-8 py-4 text-xl" href="#purchase">
+        <ButtonLink class="w-full gap-5 px-8 py-4 text-xl md:w-1/2" href="#purchase">
           <img class="h-8 w-8 object-contain invert" src={assets.cartIcon} alt="" />
           購入する
-        </a>
+        </ButtonLink>
       </div>
     </div>
   </div>

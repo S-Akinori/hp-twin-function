@@ -1,0 +1,33 @@
+---
+interface Props {
+  eyebrow: string;
+  title?: string;
+  description?: string;
+  align?: "left" | "center";
+  theme?: "dark" | "light";
+  class?: string;
+}
+
+const {
+  eyebrow,
+  title,
+  description,
+  align = "left",
+  theme = "dark",
+  class: className = "",
+} = Astro.props;
+
+const alignClass = align === "center" ? "mx-auto text-center" : "";
+const titleColor = theme === "light" ? "text-ink-950" : "text-white";
+const bodyColor = theme === "light" ? "text-ink-950/70" : "text-white/70";
+---
+
+<div class={`${alignClass} ${className}`}>
+  <p class="eyebrow">{eyebrow}</p>
+  <div class={`mt-5 h-0.5 w-16 bg-gold-400 ${align === "center" ? "mx-auto" : ""}`}></div>
+  <h2 class={`mt-5 text-4xl font-semibold leading-tight sm:text-6xl ${titleColor}`}>
+    {title}
+    <slot name="title" />
+  </h2>
+  {description && <p class={`mt-7 text-lg leading-9 ${bodyColor}`}>{description}</p>}
+</div>

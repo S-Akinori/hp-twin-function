@@ -1,0 +1,33 @@
+---
+interface Props {
+  eyebrow: string;
+  title?: string;
+  description: string;
+  image?: string;
+  imageAlt?: string;
+  backgroundImage?: string;
+  compact?: boolean;
+}
+
+const { eyebrow, title, description, image, imageAlt = "", backgroundImage, compact = false } = Astro.props;
+const minHeight = compact ? "min-h-[460px]" : "min-h-[620px]";
+---
+
+<section class="relative overflow-hidden bg-ink-950 pt-20">
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_74%_18%,rgba(73,116,181,0.34),transparent_35rem)]" aria-hidden="true"></div>
+  {backgroundImage && <img class="absolute inset-0 h-full w-full object-cover opacity-32" src={backgroundImage} alt="" />}
+  {backgroundImage && <div class="absolute inset-0 bg-[linear-gradient(90deg,rgba(5,11,21,0.96),rgba(5,11,21,0.72),rgba(5,11,21,0.38))]" aria-hidden="true"></div>}
+
+  <div class={`relative mx-auto grid ${minHeight} max-w-[1680px] items-center gap-12 px-5 py-16 sm:px-8 lg:px-16 ${image ? "lg:grid-cols-[0.9fr_1.1fr]" : ""}`}>
+    <div>
+      <p class="eyebrow text-2xl">{eyebrow}</p>
+      <div class="mt-6 h-1 w-20 bg-gold-400"></div>
+      <h1 class="mt-9 text-5xl font-semibold leading-tight text-white sm:text-7xl">
+        {title}
+        <slot name="title" />
+      </h1>
+      <p class="mt-8 max-w-3xl text-xl leading-9 text-white/74">{description}</p>
+    </div>
+    {image && <img class="w-full rounded-lg border border-white/10 object-cover shadow-product" src={image} alt={imageAlt} />}
+  </div>
+</section>

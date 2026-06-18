@@ -1,14 +1,15 @@
 ---
 import { navItems } from "../data/site";
+import ButtonLink from "./ui/ButtonLink.astro";
 
 const path = Astro.url.pathname;
 const isHome = path === "/";
 const resolveHref = (href: string) => href;
 ---
 
-<header class="fixed left-0 right-0 top-0 z-20 bg-ink-950/55 backdrop-blur-xl">
-  <nav class="mx-auto flex h-20 w-full max-w-[1680px] items-center px-5 sm:px-8 lg:px-12">
-    <a href={isHome ? "#top" : "/"} class="flex items-center gap-4 text-xl font-semibold text-white">
+<header class="fixed left-0 right-0 top-0 z-40 bg-ink-950/55 backdrop-blur-xl">
+  <nav class="relative mx-auto flex h-20 w-full max-w-[1680px] items-center px-5 sm:px-8 lg:px-12" aria-label="Primary navigation">
+    <a href={isHome ? "#top" : "/"} class="relative z-50 flex items-center gap-4 text-xl font-semibold text-white">
       <span class="relative block h-8 w-10 rounded border border-white/65 before:absolute before:-right-2 before:-top-2 before:h-8 before:w-10 before:rounded before:border before:border-white/35"></span>
       <span>Twin Function</span>
     </a>
@@ -16,7 +17,94 @@ const resolveHref = (href: string) => href;
       <div class="hidden items-center gap-10 text-base font-semibold text-white/88 lg:flex">
         {navItems.map((item) => <a class="transition hover:text-gold-400" href={resolveHref(item.href)}>{item.label}</a>)}
       </div>
-      <a href={isHome ? "#purchase" : "/#purchase"} class="yellow-button px-9 py-3.5 text-base">購入する</a>
+      <ButtonLink href={isHome ? "#purchase" : "/#purchase"} class="hidden px-9 py-3.5 text-base lg:inline-flex">購入する</ButtonLink>
+      <button
+        class="group relative z-50 grid h-11 w-11 place-items-center rounded-full border border-white/18 bg-white/[0.06] text-white transition hover:border-gold-400/70 hover:bg-white/[0.1] lg:hidden"
+        type="button"
+        aria-label="メニューを開く"
+        aria-controls="mobile-navigation"
+        aria-expanded="false"
+        data-menu-button
+      >
+        <span class="relative h-4 w-5" aria-hidden="true">
+          <span class="absolute left-0 top-0 h-0.5 w-5 rounded-full bg-current transition duration-300 group-aria-expanded:top-1.5 group-aria-expanded:rotate-45"></span>
+          <span class="absolute left-0 top-1.5 h-0.5 w-5 rounded-full bg-current transition duration-300 group-aria-expanded:opacity-0"></span>
+          <span class="absolute bottom-0 left-0 h-0.5 w-5 rounded-full bg-current transition duration-300 group-aria-expanded:bottom-2 group-aria-expanded:-rotate-45"></span>
+        </span>
+      </button>
+    </div>
+
+    <div
+      id="mobile-navigation"
+      class="pointer-events-none fixed inset-0 z-40 flex min-h-dvh translate-y-4 flex-col justify-between overflow-y-auto bg-[radial-gradient(circle_at_80%_16%,rgba(255,208,41,0.16),transparent_20rem),radial-gradient(circle_at_18%_72%,rgba(73,116,181,0.35),transparent_24rem),linear-gradient(150deg,#050b15_0%,#07182b_52%,#02050a_100%)] px-5 pb-9 pt-28 opacity-0 backdrop-blur-xl transition duration-300 ease-out lg:hidden"
+      data-mobile-menu
+      aria-hidden="true"
+    >
+      <div class="absolute inset-x-5 top-24 h-px bg-white/12" aria-hidden="true"></div>
+      <div class="grid gap-3 text-white">
+        {navItems.map((item, index) => (
+          <a
+            class="mobile-menu-item flex translate-y-5 items-center justify-between rounded-lg border border-white/10 bg-white/[0.045] px-5 py-5 text-2xl font-semibold opacity-0 shadow-[0_14px_44px_rgba(0,0,0,0.22)] transition duration-300 hover:border-gold-400/60 hover:bg-white/[0.075] hover:text-gold-400]"
+            href={resolveHref(item.href)}
+            style={`--menu-delay: ${index * 55}ms`}
+          >
+            <span>{item.label}</span>
+            <span class="text-xl text-gold-400" aria-hidden="true">→</span>
+          </a>
+        ))}
+      </div>
+      <div class="mt-10">
+        <ButtonLink href={isHome ? "#purchase" : "/#purchase"} class="mobile-menu-item mt-7 w-full translate-y-5 justify-center px-8 py-5 text-lg opacity-0">購入する</ButtonLink>
+      </div>
     </div>
   </nav>
 </header>
+
+<script>
+  const header = document.querySelector("header");
+  const menuButton = header?.querySelector("[data-menu-button]");
+  const mobileMenu = header?.querySelector("[data-mobile-menu]");
+
+  if (menuButton instanceof HTMLButtonElement && mobileMenu instanceof HTMLElement) {
+    const menuItems = Array.from(mobileMenu.querySelectorAll(".mobile-menu-item"));
+
+    const setMenuOpen = (isOpen: boolean) => {
+      menuButton.setAttribute("aria-expanded", String(isOpen));
+      menuButton.setAttribute("aria-label", isOpen ? "メニューを閉じる" : "メニューを開く");
+      mobileMenu.setAttribute("aria-hidden", String(!isOpen));
+      document.documentElement.classList.toggle("overflow-hidden", isOpen);
+      document.body.classList.toggle("overflow-hidden", isOpen);
+      mobileMenu.classList.toggle("pointer-events-auto", isOpen);
+      mobileMenu.classList.toggle("translate-y-0", isOpen);
+      mobileMenu.classList.toggle("opacity-100", isOpen);
+      mobileMenu.classList.toggle("pointer-events-none", !isOpen);
+      mobileMenu.classList.toggle("translate-y-4", !isOpen);
+      mobileMenu.classList.toggle("opacity-0", !isOpen);
+
+      menuItems.forEach((item, index) => {
+        const delay = isOpen ? item.getAttribute("style")?.match(/--menu-delay:\s*([^;]+)/)?.[1] || `${index * 55}ms` : "0ms";
+        if (item instanceof HTMLElement) item.style.transitionDelay = delay;
+        item.classList.toggle("translate-y-0", isOpen);
+        item.classList.toggle("opacity-100", isOpen);
+        item.classList.toggle("translate-y-5", !isOpen);
+        item.classList.toggle("opacity-0", !isOpen);
+      });
+    };
+
+    menuButton.addEventListener("click", () => {
+      setMenuOpen(menuButton.getAttribute("aria-expanded") !== "true");
+    });
+
+    mobileMenu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => setMenuOpen(false));
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") setMenuOpen(false);
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.matchMedia("(min-width: 1024px)").matches) setMenuOpen(false);
+    });
+  }
+</script>

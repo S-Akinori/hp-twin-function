@@ -6,6 +6,7 @@ dist/
 
 # Local generated previews and working exports
 output/
+.codex-remote-attachments/
 
 # Logs
 *.log

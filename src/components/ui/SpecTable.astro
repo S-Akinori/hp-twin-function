@@ -1,0 +1,30 @@
+---
+interface SpecItem {
+  name: string;
+  value: string;
+}
+
+interface Props {
+  items: SpecItem[];
+  theme?: "dark" | "light";
+  class?: string;
+}
+
+const { items, theme = "light", class: className = "" } = Astro.props;
+const tableClass =
+  theme === "light"
+    ? "border-ink-950/10 bg-white text-ink-950"
+    : "border-white/10 bg-white/[0.03] text-white";
+const rowBorder = theme === "light" ? "border-ink-950/10" : "border-white/10";
+const labelClass = theme === "light" ? "text-ink-950/62" : "text-white/52";
+const valueClass = theme === "light" ? "text-ink-950" : "text-white/82";
+---
+
+<dl class={`overflow-hidden rounded-xl border ${tableClass} ${className}`}>
+  {items.map((item) => (
+    <div class={`grid gap-3 border-b ${rowBorder} px-6 py-5 last:border-b-0 sm:grid-cols-[15rem_1fr] sm:px-8`}>
+      <dt class={`font-bold ${labelClass}`}>{item.name}</dt>
+      <dd class={`text-lg font-semibold ${valueClass}`}>{item.value}</dd>
+    </div>
+  ))}
+</dl>

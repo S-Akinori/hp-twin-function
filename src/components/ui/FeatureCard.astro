@@ -1,0 +1,46 @@
+---
+interface Props {
+  no?: string;
+  title: string;
+  text: string;
+  icon?: string;
+  align?: "left" | "center";
+  size?: "default" | "large";
+  framedIcon?: boolean;
+  showDivider?: boolean;
+  class?: string;
+}
+
+const {
+  no,
+  title,
+  text,
+  icon,
+  align = "left",
+  size = "default",
+  framedIcon = true,
+  showDivider = true,
+  class: className = "",
+} = Astro.props;
+
+const isCenter = align === "center";
+const headingClass = size === "large" ? "text-4xl font-semibold" : "text-3xl font-bold";
+const bodyClass =
+  size === "large"
+    ? `${isCenter ? "mx-auto max-w-[330px]" : ""} text-xl leading-9 text-white/82`
+    : "text-lg leading-8 text-white/[0.72]";
+---
+
+<article class={`feature-card p-8 ${isCenter ? "text-center" : ""} ${className}`}>
+  {no && <p class="text-4xl font-bold text-gold-400">{no}</p>}
+  {
+    icon && (
+      <div class={`mt-8 grid h-32 w-32 place-items-center ${isCenter ? "mx-auto" : ""} ${framedIcon ? "rounded-full border border-gold-400" : ""}`}>
+        <img class="h-20 w-20 object-contain" src={icon} alt="" />
+      </div>
+    )
+  }
+  <h3 class={`${icon || no ? "mt-8" : ""} ${headingClass} text-white`}>{title}</h3>
+  {showDivider && <div class={`mt-5 h-0.5 w-12 bg-gold-400 ${isCenter ? "mx-auto" : ""}`}></div>}
+  <p class={`mt-6 ${bodyClass}`}>{text}</p>
+</article>

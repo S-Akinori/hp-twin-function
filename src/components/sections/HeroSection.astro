@@ -1,5 +1,6 @@
 ---
 import ProductBadge from "../ProductBadge.astro";
+import ButtonLink from "../ui/ButtonLink.astro";
 import { assets, heroFeatures } from "../../data/site";
 ---
 
@@ -32,11 +33,11 @@ import { assets, heroFeatures } from "../../data/site";
         ))}
       </div>
       <div class="flex flex-col gap-4 sm:flex-row">
-        <a class="yellow-button gap-4 px-8 py-4 text-lg sm:px-14 sm:py-6 sm:text-2xl" href="#purchase">
+        <ButtonLink class="gap-4 px-8 py-4 text-lg sm:px-14 sm:py-6 sm:text-2xl" href="#purchase">
           <img class="h-8 w-8 object-contain invert" src={assets.cartIcon} alt="" />
           購入する
-        </a>
-        <a class="ghost-button px-8 py-4 text-lg sm:px-12 sm:py-6 sm:text-2xl" href="#features">特徴を見る</a>
+        </ButtonLink>
+        <ButtonLink class="px-8 py-4 text-lg sm:px-12 sm:py-6 sm:text-2xl" href="/features" variant="ghost">特徴を見る</ButtonLink>
       </div>
     </div>
   </div>

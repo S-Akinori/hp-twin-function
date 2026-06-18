@@ -1,66 +1,115 @@
 ---
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import "../styles/global.css";
-import { assets, storyUses } from "../data/site";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import {
+  assets,
+  storyPrinciples,
+  storyProblems,
+  storyScenes,
+} from "../data/site";
+import ButtonLink from "../components/ui/ButtonLink.astro";
+import FeatureCard from "../components/ui/FeatureCard.astro";
+import PageHero from "../components/ui/PageHero.astro";
+import SectionHeading from "../components/ui/SectionHeading.astro";
 ---
 
-<!doctype html>
-<html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Twin Functionが生まれた背景と、外出・出張・防災で役立つ理由をご紹介します。" />
-    <title>ストーリー | Twin Function</title>
-  </head>
-  <body>
-    <div class="grain-overlay" aria-hidden="true"></div>
-    <Header />
-    <main>
-      <section class="relative overflow-hidden bg-ink-950 pt-20">
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_76%_24%,rgba(73,116,181,0.36),transparent_34rem)]" aria-hidden="true"></div>
-        <img class="absolute bottom-0 right-0 hidden w-[48rem] opacity-45 lg:block" src={assets.productSingle} alt="" />
-        <div class="relative mx-auto grid min-h-[620px] max-w-[1680px] items-center px-5 py-16 sm:px-8 lg:px-16">
-          <div class="max-w-4xl">
-            <p class="eyebrow text-2xl">Story</p>
-            <div class="mt-6 h-1 w-20 bg-gold-400"></div>
-            <h1 class="mt-9 text-5xl font-semibold leading-tight text-white sm:text-7xl">
-              充電忘れも、通信不安も、<br />もう持ち歩かない。
-            </h1>
-            <p class="mt-8 max-w-3xl text-xl leading-9 text-white/74">
-              スマートフォンの充電、通信手段、非常時の備え。必要なものをひとつにまとめ、単3乾電池3本で使える安心を目指しました。
-            </p>
-          </div>
-        </div>
-      </section>
+<BaseLayout title="ストーリー | Twin Function" description="Twin Functionが生まれた背景と、外出・出張・防災で役立つ理由をご紹介します。">
+  <main>
+      <PageHero
+        eyebrow="Story"
+        description="スマートフォンの充電、通信手段、非常時の備え。必要なものをひとつにまとめ、単3乾電池3本で使える安心を目指しました。"
+        backgroundImage={assets.productBackground}
+      >
+        <Fragment slot="title">充電忘れも、通信不安も、<br />もう持ち歩かない。</Fragment>
+      </PageHero>
 
       <section class="bg-[linear-gradient(180deg,#07111f,#050b15)] px-5 py-20 sm:px-8 lg:px-16">
-        <div class="mx-auto grid max-w-[1320px] gap-8 lg:grid-cols-3">
-          {storyUses.map((item) => (
-            <article class="feature-card p-8 text-center">
-              <div class="mx-auto grid h-28 w-28 place-items-center rounded-full border border-white/30">
-                <img class="h-16 w-16 object-contain" src={item.icon} alt="" />
-              </div>
-              <h2 class="mt-7 text-3xl font-bold text-white">{item.title}</h2>
-              <p class="mt-5 text-lg leading-8 text-white/72">{item.text}</p>
-            </article>
-          ))}
+        <div class="mx-auto grid max-w-[1320px] gap-12 lg:grid-cols-[0.86fr_1.14fr] lg:items-start">
+          <div>
+            <SectionHeading
+              eyebrow="Problem"
+              title="“持っている”だけでは、足りない場面がある。"
+              description="Twin Functionの出発点です。充電器、通信機器、防災用品を別々に持つのではなく、必要な機能を日常で使える形にまとめることから始まりました。"
+            />
+          </div>
+          <div class="grid gap-5">
+            {storyProblems.map((item) => (
+              <FeatureCard title={item.title} text={item.text} showDivider={false} class="!rounded-lg !border-white/10 !bg-white/[0.035] !p-6" />
+            ))}
+          </div>
         </div>
       </section>
 
       <section class="bg-white px-5 py-20 text-ink-950 sm:px-8 lg:px-16">
         <div class="mx-auto grid max-w-[1320px] gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <div>
-            <p class="eyebrow">Concept</p>
-            <h2 class="mt-5 text-4xl font-bold leading-tight sm:text-6xl">どこでも手に入る電池で、必要な時にすぐ使える。</h2>
-            <p class="mt-7 text-lg leading-9 text-ink-950/72">
-              充電環境がない場面でも、単3乾電池3本を入れ替えるだけで使える設計です。日常の外出や出張はもちろん、万が一の備えとしても持ちやすいプロダクトです。
-            </p>
+            <SectionHeading
+              eyebrow="Concept"
+              title="どこでも手に入る電池で、必要な時にすぐ使える。"
+              description="充電環境がない場面でも、単3乾電池3本を入れ替えるだけで使える設計です。日常の外出や出張はもちろん、万が一の備えとしても持ちやすいプロダクトです。"
+              theme="light"
+            />
           </div>
-          <img class="w-full rounded-lg border border-ink-950/10 object-cover" src={assets.productWithBatteries} alt="Twin Function と乾電池3本" />
+          <img class="w-full rounded-lg object-cover" src={assets.productWithBatteries} alt="Twin Function と乾電池3本" />
         </div>
       </section>
-    </main>
-    <Footer />
-  </body>
-</html>
+
+      <section class="bg-ink-950 px-5 py-20 sm:px-8 lg:px-16">
+        <div class="mx-auto max-w-[1320px]">
+          <SectionHeading
+            eyebrow="Design Principle"
+            title="使う瞬間の不安を、設計で減らす。"
+            description="Twin Functionは、もしもの時だけの道具ではありません。普段から使えること、見える場所に置けること、必要な時に迷わないことを重視しています。"
+          />
+          <div class="mt-12 grid gap-7 lg:grid-cols-3">
+            {storyPrinciples.map((item) => (
+              <FeatureCard title={item.title} text={item.text} icon={item.icon} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-[linear-gradient(180deg,#07111f,#050b15)] px-5 py-20 sm:px-8 lg:px-16">
+        <div class="mx-auto max-w-[1320px]">
+          <SectionHeading
+            eyebrow="Use Scenes"
+            title="外出、出張、防災。必要な時は、いつも突然くる。"
+            align="center"
+          />
+          <div class="mt-12 grid gap-8 lg:grid-cols-3">
+            {storyScenes.map((item) => (
+              <article class="rounded-lg border border-white/10 bg-white/[0.035] p-8">
+                <div class="flex items-center gap-5">
+                  <div class="grid h-20 w-20 shrink-0 place-items-center rounded-full border border-white/25">
+                    <img class="h-12 w-12 object-contain" src={item.icon} alt="" />
+                  </div>
+                  <div>
+                    <h3 class="text-3xl font-bold text-white">{item.title}</h3>
+                    <p class="mt-2 text-base font-semibold text-gold-400">{item.lead}</p>
+                  </div>
+                </div>
+                <p class="mt-7 text-lg leading-9 text-white/72">{item.text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="relative overflow-hidden bg-white px-5 py-20 text-ink-950 sm:px-8 lg:px-16">
+        <div class="mx-auto grid max-w-[1320px] gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+          <div>
+            <SectionHeading
+              eyebrow="Everyday Preparedness"
+              title="備えは、日常の延長にある。"
+              description="防災用品としてしまい込むのではなく、出張や外出でも使う。日常で触れているものほど、非常時にも迷わず使えます。Twin Functionは、普段使いと備えの境界をなくすための製品です。"
+              theme="light"
+            />
+            <div class="mt-9 flex flex-col gap-4 sm:flex-row">
+              <ButtonLink class="px-9 py-4 text-base" href="/features">特徴を見る</ButtonLink>
+              <ButtonLink class="border-ink-950/20 text-ink-950 hover:bg-ink-950/[0.04]" href="/manual" variant="ghost">使い方を見る</ButtonLink>
+            </div>
+          </div>
+          <img class="w-full object-cover" src={assets.productCharging} alt="Twin Functionをスマートフォンに接続している様子" />
+        </div>
+      </section>
+  </main>
+</BaseLayout>

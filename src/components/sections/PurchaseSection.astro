@@ -1,5 +1,6 @@
 ---
 import ProductBadge from "../ProductBadge.astro";
+import ButtonLink from "../ui/ButtonLink.astro";
 import { assets, purchaseFeatures, specs } from "../../data/site";
 ---
 
@@ -34,10 +35,10 @@ import { assets, purchaseFeatures, specs } from "../../data/site";
         <span class="mb-4 border border-white/30 px-3 py-2 text-sm sm:px-5 sm:py-3 sm:text-xl">送料無料</span>
       </div>
       <div class="my-10 h-px bg-white/28"></div>
-      <a class="yellow-button mt-10 w-full gap-5 py-7 text-3xl" href="https://www.makuake.com/project/twin-function/">
+      <ButtonLink class="mt-10 w-full gap-5 py-7 text-3xl" href="https://www.makuake.com/project/twin-function/">
         <img class="h-10 w-10 object-contain invert" src={assets.cartIcon} alt="" />
         購入する
-      </a>
+      </ButtonLink>
       <div class="mt-8 grid grid-cols-3 gap-4 text-center text-white/82">
         {purchaseFeatures.map((item) => (
           <div>
