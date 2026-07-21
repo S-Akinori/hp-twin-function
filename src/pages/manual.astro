@@ -1,27 +1,24 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import {
-  basicSteps,
+  chargerUsageSteps,
   manualAssets,
   manualToc,
   safetyCards,
-  simSteps,
-  simWarnings,
   troubleshootingCards,
-  wifiHints,
-  wifiSteps,
+  wifiUsageSteps,
 } from "../data/manual";
 import ButtonLink from "../components/ui/ButtonLink.astro";
 import PageHero from "../components/ui/PageHero.astro";
 import SectionHeading from "../components/ui/SectionHeading.astro";
 ---
 
-<BaseLayout title="Twin Function - 取扱説明書" description="Twin Functionの取扱説明書。乾電池のセット、SIMカード設定、Wi-Fi接続、充電方法、注意事項をご案内します。">
+<BaseLayout title="Twin Function - 取扱説明書" description="Twin Functionの取扱説明書。Wi-Fiを使用する場合と充電器として使う場合の手順、注意事項をご案内します。">
   <main id="top">
       <PageHero
         eyebrow="Manual"
         title="Twin Function 取扱説明書"
-        description="基本的な使い方からSIMカード、Wi-Fi接続、トラブルシューティングまで、安全にご利用いただくための情報をまとめました。"
+        description="Wi-Fiを使用する場合と、充電器として使う場合。それぞれの手順と、安全にご利用いただくための情報をまとめました。"
         image={manualAssets.hero}
         imageAlt="Twin Function と乾電池3本"
       />
@@ -36,80 +33,145 @@ import SectionHeading from "../components/ui/SectionHeading.astro";
         </nav>
       </section>
 
-      <section id="basic" class="manual-page-section bg-ink-950">
-        <SectionHeading eyebrow="Basic Usage" title="基本的な使い方" />
+      <section id="manual-video" class="manual-page-section bg-[linear-gradient(180deg,#07111f,#050b15)]">
+        <SectionHeading
+          eyebrow="Video Manual"
+          title="動画マニュアル"
+          description="実際の操作の流れを動画で確認できます。Wi-Fi接続や充電方法を進める前にご覧ください。"
+        />
+        <div class="manual-video-frame">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/Ob5l4Np8qE0"
+            title="Twin Function マニュアル動画"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </section>
+
+      <section id="wifi-use" class="manual-page-section bg-ink-950">
+        <SectionHeading
+          eyebrow="Wi-Fi Usage"
+          title="Wi-Fiを使用する場合"
+          description="乾電池、SIMカード、Wi-Fi接続、必要に応じたAPN設定までの手順です。"
+        />
         <div class="mt-12 grid gap-6">
-          {basicSteps.map((step) => (
+          {wifiUsageSteps.map((step) => (
             <article class="manual-step-row">
-              <div class="manual-step-label">{step.label}</div>
-              <div class="manual-step-content">
-                <img class="h-14 w-14 object-contain" src={step.icon} alt="" />
-                <div>
-                  <div class="flex items-center gap-4">
-                    <span class="manual-number">{step.no}</span>
-                    <h3>{step.title}</h3>
-                  </div>
-                  <p>{step.text}</p>
+              <figure class="manual-step-image">
+                <div class:list={["manual-step-image-grid", step.images.length > 1 && "multiple"]}>
+                  {step.images.map((image, index) => (
+                    <button
+                      class="manual-zoom-trigger"
+                      type="button"
+                      data-manual-lightbox-src={image}
+                      data-manual-lightbox-alt={`${step.title}の手順イメージ ${index + 1}`}
+                      aria-label={`${step.title}の手順イメージ ${index + 1}を拡大表示`}
+                    >
+                      <img src={image} alt={`${step.title}の手順イメージ ${index + 1}`} />
+                    </button>
+                  ))}
                 </div>
+                <figcaption>{step.label}</figcaption>
+              </figure>
+              <div class="manual-step-content">
+                {step.intro && <p class="manual-step-intro">{step.intro}</p>}
+                <div class="flex items-center gap-4">
+                  <span class="manual-number">{step.no}</span>
+                  <h3>{step.title}</h3>
+                </div>
+                <p>{step.text}</p>
+                {
+                  step.notes && step.notes.length > 0 && (
+                    <ul class="manual-step-notes">
+                      {step.notes.map((note) => (
+                        <li>{note}</li>
+                      ))}
+                    </ul>
+                  )
+                }
+                {
+                  step.details && step.details.length > 0 && (
+                    <dl class="manual-step-details">
+                      {step.details.map((detail) => (
+                        <div>
+                          <dt>{detail.label}</dt>
+                          <dd>{detail.value}</dd>
+                        </div>
+                      ))}
+                    </dl>
+                  )
+                }
               </div>
             </article>
           ))}
         </div>
       </section>
 
-      <section id="sim" class="manual-page-section bg-[linear-gradient(180deg,#07111f,#08182b)]">
+      <section id="charger-use" class="manual-page-section bg-[linear-gradient(180deg,#07111f,#08182b)]">
         <SectionHeading
-          eyebrow="SIM Setup"
-          title="SIMカードのセットアップ方法"
-          description="Twin FunctionでWi-Fi接続を利用するには、データ通信対応のSIMカードが必要です。"
+          eyebrow="Charger Usage"
+          title="充電器として使う場合"
+          description="スマートフォンを充電する場合は、SIMカードやWi-Fi接続は不要です。乾電池をセットして本体を直接接続します。"
         />
         <div class="mt-12 grid gap-6">
-          {simSteps.map((step) => (
+          {chargerUsageSteps.map((step) => (
             <article class="manual-step-row">
-              <div class="manual-step-label">{step.label}</div>
-              <div class="manual-step-content">
-                <img class="h-14 w-14 object-contain" src="/assets/icons/08_wifi.png" alt="" />
-                <div>
-                  <div class="flex items-center gap-4">
-                    <span class="manual-number">{step.no}</span>
-                    <h3>{step.title}</h3>
-                  </div>
-                  <p>{step.text}</p>
+              <figure class="manual-step-image">
+                <div class:list={["manual-step-image-grid", step.images.length > 1 && "multiple"]}>
+                  {step.images.map((image, index) => (
+                    <button
+                      class="manual-zoom-trigger"
+                      type="button"
+                      data-manual-lightbox-src={image}
+                      data-manual-lightbox-alt={`${step.title}の手順イメージ ${index + 1}`}
+                      aria-label={`${step.title}の手順イメージ ${index + 1}を拡大表示`}
+                    >
+                      <img src={image} alt={`${step.title}の手順イメージ ${index + 1}`} />
+                    </button>
+                  ))}
                 </div>
+                <figcaption>{step.label}</figcaption>
+              </figure>
+              <div class="manual-step-content">
+                {step.intro && <p class="manual-step-intro">{step.intro}</p>}
+                <div class="flex items-center gap-4">
+                  <span class="manual-number">{step.no}</span>
+                  <h3>{step.title}</h3>
+                </div>
+                <p>{step.text}</p>
+                {
+                  step.notes && step.notes.length > 0 && (
+                    <ul class="manual-step-notes">
+                      {step.notes.map((note) => (
+                        <li>{note}</li>
+                      ))}
+                    </ul>
+                  )
+                }
+                {
+                  step.details && step.details.length > 0 && (
+                    <dl class="manual-step-details">
+                      {step.details.map((detail) => (
+                        <div>
+                          <dt>{detail.label}</dt>
+                          <dd>{detail.value}</dd>
+                        </div>
+                      ))}
+                    </dl>
+                  )
+                }
               </div>
             </article>
           ))}
         </div>
         <aside class="manual-note warning">
-          <h3>注意事項</h3>
+          <h3>充電時の注意事項</h3>
           <ul>
-            {simWarnings.map((item) => <li>{item}</li>)}
-          </ul>
-        </aside>
-      </section>
-
-      <section id="wifi" class="manual-page-section bg-white text-ink-950">
-        <SectionHeading
-          eyebrow="Wi-Fi Setup"
-          title="Wi-Fi接続の詳細手順"
-          description="スマートフォンからTwin FunctionのWi-Fiネットワークに接続する方法です。"
-          theme="light"
-        />
-        <div class="manual-card-grid">
-          {wifiSteps.map((step) => (
-            <article class="manual-light-card">
-              <div class="manual-card-head">
-                <span>{step.no}</span>
-                <h3>{step.title}</h3>
-              </div>
-              <p>{step.text}</p>
-            </article>
-          ))}
-        </div>
-        <aside class="manual-note info light-note">
-          <h3>ヒント</h3>
-          <ul>
-            {wifiHints.map((item) => <li>{item}</li>)}
+            <li>充電中に本体が異常に熱い、においがするなどの場合は使用を中止してください。</li>
+            <li>端子の向きが合わない場合は、無理に押し込まないでください。</li>
+            <li>長期間使用しない場合は、乾電池を本体から取り外してください。</li>
           </ul>
         </aside>
       </section>
@@ -144,5 +206,57 @@ import SectionHeading from "../components/ui/SectionHeading.astro";
           <ButtonLink class="px-10 py-5 text-base" href="/">製品ページへ戻る</ButtonLink>
         </div>
       </section>
+
+      <div class="manual-lightbox" data-manual-lightbox aria-hidden="true">
+        <button class="manual-lightbox-backdrop" type="button" data-manual-lightbox-close aria-label="拡大画像を閉じる"></button>
+        <div class="manual-lightbox-panel" role="dialog" aria-modal="true" aria-label="マニュアル画像の拡大表示">
+          <button class="manual-lightbox-close" type="button" data-manual-lightbox-close aria-label="拡大画像を閉じる">x</button>
+          <img data-manual-lightbox-image src="" alt="" />
+        </div>
+      </div>
   </main>
+
+  <script>
+    const lightbox = document.querySelector("[data-manual-lightbox]");
+    const lightboxImage = lightbox?.querySelector("[data-manual-lightbox-image]");
+    const triggers = Array.from(document.querySelectorAll("[data-manual-lightbox-src]"));
+    const closers = Array.from(document.querySelectorAll("[data-manual-lightbox-close]"));
+    let activeTrigger: HTMLButtonElement | null = null;
+
+    const openLightbox = (trigger: HTMLButtonElement) => {
+      if (!(lightbox instanceof HTMLElement) || !(lightboxImage instanceof HTMLImageElement)) return;
+      activeTrigger = trigger;
+      lightboxImage.src = trigger.dataset.manualLightboxSrc ?? "";
+      lightboxImage.alt = trigger.dataset.manualLightboxAlt ?? "";
+      lightbox.setAttribute("aria-hidden", "false");
+      document.documentElement.classList.add("manual-lightbox-open");
+      const closeButton = lightbox.querySelector(".manual-lightbox-close");
+      if (closeButton instanceof HTMLButtonElement) closeButton.focus();
+    };
+
+    const closeLightbox = () => {
+      if (!(lightbox instanceof HTMLElement) || !(lightboxImage instanceof HTMLImageElement)) return;
+      lightbox.setAttribute("aria-hidden", "true");
+      document.documentElement.classList.remove("manual-lightbox-open");
+      lightboxImage.removeAttribute("src");
+      if (activeTrigger instanceof HTMLButtonElement) activeTrigger.focus();
+      activeTrigger = null;
+    };
+
+    triggers.forEach((trigger) => {
+      if (!(trigger instanceof HTMLButtonElement)) return;
+      trigger.addEventListener("click", () => openLightbox(trigger));
+    });
+
+    closers.forEach((closer) => {
+      if (!(closer instanceof HTMLButtonElement)) return;
+      closer.addEventListener("click", closeLightbox);
+    });
+
+    window.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && lightbox?.getAttribute("aria-hidden") === "false") {
+        closeLightbox();
+      }
+    });
+  </script>
 </BaseLayout>

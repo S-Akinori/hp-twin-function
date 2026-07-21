@@ -77,24 +77,95 @@
     @apply text-ink-950/70;
   }
 
-  .manual-step-row {
-    @apply grid gap-4 rounded-lg border border-white/10 bg-white/[0.035] p-5 shadow-insetLine sm:grid-cols-[9rem_1fr] sm:p-6;
+  .manual-video-frame {
+    @apply mt-12 overflow-hidden rounded-lg border border-white/10 bg-ink-950/70 shadow-insetLine;
   }
 
-  .manual-step-label {
-    @apply flex min-h-24 items-center justify-center rounded-md bg-ink-900 text-lg font-bold uppercase tracking-[0.18em] text-gold-400;
+  .manual-video-frame iframe {
+    @apply block aspect-video w-full;
+  }
+
+  .manual-step-row {
+    @apply grid overflow-hidden rounded-lg border border-white/10 bg-white/[0.035] shadow-insetLine lg:grid-cols-2;
+  }
+
+  .manual-step-image {
+    @apply relative bg-[linear-gradient(135deg,rgba(255,255,255,0.08),rgba(247,189,17,0.08))] p-5 sm:p-6;
+  }
+
+  .manual-step-image-grid {
+    @apply grid aspect-video gap-3;
+  }
+
+  .manual-step-image-grid.multiple {
+    @apply grid-cols-2;
+  }
+
+  .manual-zoom-trigger {
+    @apply relative h-full min-h-0 w-full overflow-hidden rounded-md border border-white/10 bg-ink-950/35 p-2 transition duration-300 hover:border-gold-400/70 hover:bg-ink-950/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-400 active:scale-[0.99];
+  }
+
+  .manual-zoom-trigger::after {
+    content: "拡大";
+    @apply absolute bottom-3 right-3 rounded-full border border-white/15 bg-ink-950/80 px-3 py-1 text-xs font-bold text-white/80 opacity-0 transition duration-300;
+  }
+
+  .manual-zoom-trigger:hover::after,
+  .manual-zoom-trigger:focus-visible::after {
+    @apply opacity-100;
+  }
+
+  .manual-step-image-grid img {
+    @apply h-full min-h-0 w-full object-contain;
+  }
+
+  .manual-step-image figcaption {
+    @apply absolute left-5 top-5 rounded-full border border-gold-400/35 bg-ink-950/80 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-gold-400 backdrop-blur-sm;
   }
 
   .manual-step-content {
-    @apply flex gap-5 sm:items-start;
+    @apply flex min-h-64 flex-col justify-center p-6 sm:min-h-80 sm:p-8 lg:p-10;
   }
 
   .manual-step-content h3 {
-    @apply text-2xl font-bold text-white;
+    @apply text-2xl font-bold leading-tight text-white sm:text-3xl;
   }
 
   .manual-step-content p {
-    @apply mt-3 text-base leading-8 text-white/[0.72];
+    @apply mt-5 text-base leading-8 text-white/[0.72] sm:text-lg;
+  }
+
+  .manual-step-intro {
+    @apply mb-6 mt-0 rounded-md border border-gold-400/35 bg-gold-400/[0.08] px-4 py-3 text-sm font-semibold leading-7 text-gold-400 sm:text-base;
+  }
+
+  .manual-step-notes {
+    @apply mt-5 grid gap-2 border-t border-white/10 pt-5 text-sm leading-7 text-white/[0.68] sm:text-base;
+  }
+
+  .manual-step-notes li {
+    @apply pl-1;
+  }
+
+  .manual-step-notes li::before {
+    content: "※";
+    @apply mr-1 text-gold-400;
+  }
+
+  .manual-step-details {
+    @apply mt-5 grid gap-3 rounded-md border border-white/10 bg-ink-950/35 p-4 text-sm sm:text-base;
+  }
+
+  .manual-step-details div {
+    @apply grid gap-1 sm:grid-cols-[9rem_1fr] sm:gap-4;
+  }
+
+  .manual-step-details dt {
+    @apply font-bold text-gold-400;
+  }
+
+  .manual-step-details dd {
+    @apply text-white/[0.78];
   }
 
   .manual-number {
@@ -168,6 +239,34 @@
   .manual-light-card p {
     @apply mt-4 text-base leading-8 text-ink-950/[0.72];
   }
+
+  .manual-lightbox {
+    @apply fixed inset-0 z-40 hidden items-center justify-center px-4 py-6;
+  }
+
+  .manual-lightbox[aria-hidden="false"] {
+    @apply flex;
+  }
+
+  .manual-lightbox-backdrop {
+    @apply absolute inset-0 bg-ink-950/90 backdrop-blur-sm;
+  }
+
+  .manual-lightbox-panel {
+    @apply relative max-h-[90dvh] w-full max-w-6xl rounded-lg border border-white/15 bg-ink-950 p-3 shadow-[0_28px_80px_-28px_rgba(0,0,0,0.9)] sm:p-4;
+  }
+
+  .manual-lightbox-panel img {
+    @apply max-h-[82dvh] w-full rounded-md object-contain;
+  }
+
+  .manual-lightbox-close {
+    @apply absolute right-3 top-3 grid h-10 w-10 place-items-center rounded-full border border-white/15 bg-ink-950/85 text-lg font-bold text-white transition hover:border-gold-400 hover:text-gold-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-400;
+  }
+}
+
+.manual-lightbox-open {
+  overflow: hidden;
 }
 
 .grain-overlay {
