@@ -260,6 +260,23 @@ export const purchaseFeatures = [
   { label: "最大8台接続", icon: "/assets/icons/10_phone.png" },
 ];
 
+export const purchasePlans = [
+  {
+    name: "SIMなし",
+    description: "本体のみ",
+    price: "26,000",
+    purchaseLabel: "本体のみを購入する",
+    purchaseUrl: "https://buy.stripe.com/bJe9AT3l62WT6Py2lefAc02",
+  },
+  {
+    name: "SIMあり",
+    description: "本体＋SIMカード（100GB／360日）",
+    price: "34,600",
+    purchaseLabel: "SIM付きを購入する",
+    purchaseUrl: "https://buy.stripe.com/dRm28rcVG2WT5Lue3WfAc01",
+  },
+];
+
 export const assets = {
   product : "/assets/visuals/00_product.png",
   productSingle: "/assets/visuals/01_product_device_single.png",
@@ -271,6 +288,7 @@ export const assets = {
   circuitGrid: "/assets/backgrounds/04_circuit_grid.png",
   metallicCloseup: "/assets/backgrounds/05_metallic_closeup.png",
   cartIcon: "/assets/icons/14_cart.png",
+  purchaseCartIcon: "/assets/icons/cart-purchase.png",
   batteryIcon: "/assets/icons/07_battery.png",
   manualIcon: "/assets/icons/13_manual_book.png",
 };

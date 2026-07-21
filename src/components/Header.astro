@@ -1,5 +1,5 @@
 ---
-import { navItems } from "../data/site";
+import { assets, navItems } from "../data/site";
 import ButtonLink from "./ui/ButtonLink.astro";
 
 const path = Astro.url.pathname;
@@ -17,7 +17,10 @@ const resolveHref = (href: string) => href;
       <div class="hidden items-center gap-10 text-base font-semibold text-white/88 lg:flex">
         {navItems.map((item) => <a class="transition hover:text-gold-400" href={resolveHref(item.href)}>{item.label}</a>)}
       </div>
-      <ButtonLink href={isHome ? "#purchase" : "/#purchase"} class="hidden px-9 py-3.5 text-base lg:inline-flex">購入する</ButtonLink>
+      <ButtonLink href={isHome ? "#purchase" : "/#purchase"} class="hidden gap-2 px-9 py-3.5 text-base lg:inline-flex">
+        <img class="h-6 w-6 object-contain" src={assets.purchaseCartIcon} alt="" />
+        購入する
+      </ButtonLink>
       <button
         class="group relative z-50 grid h-11 w-11 place-items-center rounded-full border border-white/18 bg-white/[0.06] text-white transition hover:border-gold-400/70 hover:bg-white/[0.1] lg:hidden"
         type="button"
@@ -54,7 +57,10 @@ const resolveHref = (href: string) => href;
         ))}
       </div>
       <div class="mt-10">
-        <ButtonLink href={isHome ? "#purchase" : "/#purchase"} class="mobile-menu-item mt-7 w-full translate-y-5 justify-center px-8 py-5 text-lg opacity-0">購入する</ButtonLink>
+        <ButtonLink href={isHome ? "#purchase" : "/#purchase"} class="mobile-menu-item mt-7 w-full translate-y-5 justify-center gap-3 px-8 py-5 text-lg opacity-0">
+          <img class="h-7 w-7 object-contain" src={assets.purchaseCartIcon} alt="" />
+          購入する
+        </ButtonLink>
       </div>
     </div>
   </nav>
