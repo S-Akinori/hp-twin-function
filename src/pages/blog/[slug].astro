@@ -1,0 +1,110 @@
+---
+import { sanityClient } from "sanity:client";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import BlogBody from "../../components/blog/BlogBody.astro";
+import { BLOG_POST_QUERY, BLOG_POST_SLUGS_QUERY } from "../../sanity/queries";
+import { urlForImage } from "../../sanity/image";
+import type { BlogPost } from "../../sanity/types";
+
+export async function getStaticPaths() {
+  return await sanityClient.fetch(BLOG_POST_SLUGS_QUERY);
+}
+
+const { slug } = Astro.params as { slug: string };
+const post = await sanityClient.fetch<BlogPost | null>(BLOG_POST_QUERY, {
+  slug,
+});
+
+if (!post) {
+  return Astro.redirect("/blog");
+}
+
+const publishedDate = new Intl.DateTimeFormat("ja-JP", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+}).format(new Date(post.publishedAt));
+const heroImage = post.mainImage?.asset
+  ? urlForImage(post.mainImage).width(1600).height(900).fit("crop").url()
+  : "";
+const ogImage = post.seo.image?.asset
+  ? urlForImage(post.seo.image).width(1200).height(630).fit("crop").url()
+  : heroImage;
+const articleUrl = new URL(`/blog/${post.slug}`, Astro.site ?? Astro.url).href;
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: post.title,
+  description: post.seo.description,
+  datePublished: post.publishedAt,
+  dateModified: post.updatedAt,
+  mainEntityOfPage: articleUrl,
+  ...(ogImage ? { image: ogImage } : {}),
+  publisher: {
+    "@type": "Organization",
+    name: "Twin Function",
+  },
+};
+---
+
+<BaseLayout
+  title={`${post.seo.title} | Twin Function`}
+  description={post.seo.description}
+  image={ogImage}
+  canonical={articleUrl}
+  noIndex={post.seo.noIndex}
+  type="article"
+  publishedTime={post.publishedAt}
+>
+  <main>
+    <article>
+      <header class="relative overflow-hidden pb-14 pt-36 sm:pb-20 sm:pt-44">
+        <div class="absolute inset-0 soft-grid opacity-35" aria-hidden="true"></div>
+        <div class="section-shell relative max-w-[1120px]">
+          <a href="/blog" class="inline-flex items-center gap-2 text-sm font-semibold text-white/55 transition hover:text-gold-400">
+            <span aria-hidden="true">←</span> ブログ一覧
+          </a>
+          <div class="mt-10 flex flex-wrap items-center gap-4 text-xs font-semibold tracking-[0.12em] text-white/50">
+            {post.category && <span class="text-gold-400">{post.category.title}</span>}
+            <time datetime={post.publishedAt}>{publishedDate}</time>
+            <span>{Math.max(post.readingTime, 1)} MIN READ</span>
+          </div>
+          <h1 class="mt-6 max-w-5xl text-4xl font-semibold leading-[1.18] tracking-[-0.025em] text-white sm:text-6xl lg:text-7xl">
+            {post.title}
+          </h1>
+          <p class="mt-7 max-w-3xl text-lg leading-9 text-white/62">{post.excerpt}</p>
+        </div>
+      </header>
+
+      {
+        heroImage && (
+          <div class="section-shell max-w-[1280px]">
+            <div class="overflow-hidden rounded-[1.25rem] border border-white/10 bg-white/[0.035]">
+              <img
+                src={heroImage}
+                alt={post.mainImage?.alt ?? ""}
+                width="1600"
+                height="900"
+                class="aspect-video w-full object-cover"
+                decoding="async"
+              />
+            </div>
+          </div>
+        )
+      }
+
+      <section class="section-shell max-w-[920px] py-16 sm:py-24">
+        <BlogBody value={post.body ?? []} />
+      </section>
+    </article>
+
+    <section class="border-t border-white/10 py-20 text-center">
+      <div class="section-shell">
+        <p class="eyebrow">Keep exploring</p>
+        <h2 class="mt-5 text-3xl font-semibold text-white sm:text-5xl">ほかの記事も読む</h2>
+        <a class="yellow-button mt-8" href="/blog">ブログ一覧へ戻る</a>
+      </div>
+    </section>
+  </main>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+</BaseLayout>

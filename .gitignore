@@ -20,6 +20,9 @@ pnpm-debug.log*
 .env
 .env.*
 !.env.example
+studio/.sanity/
+studio/dist/
+.playwright-cli/
 
 # Package manager caches
 .npm/

@@ -1,0 +1,58 @@
+---
+import { urlForImage } from "../../sanity/image";
+import type { BlogPostSummary } from "../../sanity/types";
+
+interface Props {
+  post: BlogPostSummary;
+  featured?: boolean;
+}
+
+const { post, featured = false } = Astro.props;
+const imageUrl = post.mainImage?.asset
+  ? urlForImage(post.mainImage)
+      .width(featured ? 1440 : 900)
+      .height(featured ? 820 : 560)
+      .fit("crop")
+      .url()
+  : "";
+const date = new Intl.DateTimeFormat("ja-JP", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+}).format(new Date(post.publishedAt));
+---
+
+<article class:list={["blog-card group", { "blog-card-featured": featured }]}>
+  <a href={`/blog/${post.slug}`} class="block h-full">
+    <div class="blog-card-image">
+      {
+        imageUrl ? (
+          <img
+            src={imageUrl}
+            alt={post.mainImage?.alt ?? ""}
+            width={featured ? "1440" : "900"}
+            height={featured ? "820" : "560"}
+            loading={featured ? "eager" : "lazy"}
+            decoding="async"
+          />
+        ) : (
+          <div class="soft-grid grid h-full place-items-center text-gold-400/70" aria-hidden="true">
+            <span class="text-5xl">TF</span>
+          </div>
+        )
+      }
+    </div>
+    <div class="blog-card-content">
+      <div class="flex flex-wrap items-center gap-3 text-xs font-semibold tracking-[0.12em] text-white/50">
+        {post.category && <span class="text-gold-400">{post.category.title}</span>}
+        <time datetime={post.publishedAt}>{date}</time>
+        <span>{Math.max(post.readingTime, 1)} MIN READ</span>
+      </div>
+      <h2>{post.title}</h2>
+      <p>{post.excerpt}</p>
+      <span class="mt-auto inline-flex items-center gap-3 pt-7 text-sm font-bold text-white">
+        記事を読む <span class="text-gold-400 transition group-hover:translate-x-1">→</span>
+      </span>
+    </div>
+  </a>
+</article>

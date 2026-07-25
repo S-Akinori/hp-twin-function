@@ -1,0 +1,35 @@
+---
+interface Props {
+  node: {
+    label?: string;
+    url?: string;
+    variant?: "primary" | "secondary";
+    newWindow?: boolean;
+  };
+}
+
+const { node } = Astro.props;
+const label = node.label?.trim();
+const url = node.url?.trim();
+const isExternal = Boolean(url && /^(https?:)?\/\//.test(url));
+const openInNewWindow = Boolean(node.newWindow);
+const rel = openInNewWindow && isExternal ? "noopener noreferrer" : undefined;
+const className =
+  node.variant === "secondary" ? "blog-cta blog-cta-secondary" : "blog-cta blog-cta-primary";
+---
+
+{
+  label && url && (
+    <div class="blog-cta-wrap">
+      <a
+        class={className}
+        href={url}
+        target={openInNewWindow ? "_blank" : undefined}
+        rel={rel}
+      >
+        <span>{label}</span>
+        <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  )
+}

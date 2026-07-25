@@ -1,0 +1,22 @@
+---
+import { urlForImage } from "../../sanity/image";
+import type { SanityImage } from "../../sanity/types";
+
+interface Props {
+  node: SanityImage;
+}
+
+const { node } = Astro.props;
+const src = node?.asset
+  ? urlForImage(node).width(1200).fit("max").url()
+  : "";
+---
+
+{
+  src && (
+    <figure>
+      <img src={src} alt={node.alt ?? ""} width="1200" loading="lazy" decoding="async" />
+      {node.caption && <figcaption>{node.caption}</figcaption>}
+    </figure>
+  )
+}

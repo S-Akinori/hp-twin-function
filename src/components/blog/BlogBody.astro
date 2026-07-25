@@ -1,0 +1,25 @@
+---
+import { PortableText } from "astro-portabletext";
+import PortableTextCta from "./PortableTextCta.astro";
+import PortableTextImage from "./PortableTextImage.astro";
+import PortableTextLink from "./PortableTextLink.astro";
+
+interface Props {
+  value: any[];
+}
+
+const { value } = Astro.props;
+const components = {
+  type: {
+    cta: PortableTextCta,
+    image: PortableTextImage,
+  },
+  mark: {
+    link: PortableTextLink,
+  },
+};
+---
+
+<div class="blog-body">
+  <PortableText value={value} components={components} />
+</div>
