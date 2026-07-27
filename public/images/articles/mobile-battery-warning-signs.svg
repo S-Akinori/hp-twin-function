@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1376" height="768" viewBox="0 0 1376 768" role="img" aria-labelledby="title desc">
+  <title id="title">モバイルバッテリーの危険サイン5つ</title>
+  <desc id="desc">膨らみ、異常発熱、異臭、異音、充電不良という使用中止すべき5つのサイン。</desc>
+  <rect width="1376" height="768" fill="#f4f1e8"/>
+  <text x="88" y="106" fill="#16191d" font-family="sans-serif" font-size="48" font-weight="700">見逃さないで。使用中止のサイン</text>
+  <text x="88" y="152" fill="#555d65" font-family="sans-serif" font-size="24">1つでも当てはまれば、充電・使用をやめて安全な場所へ</text>
+  <g font-family="sans-serif">
+    <g transform="translate(88 224)"><rect width="360" height="180" rx="20" fill="#fff" stroke="#d4cfc3" stroke-width="2"/><circle cx="62" cy="62" r="30" fill="#f2c84b"/><text x="62" y="73" text-anchor="middle" font-size="32">↔</text><text x="112" y="61" font-size="30" font-weight="700" fill="#16191d">膨らみ・変形</text><text x="112" y="105" font-size="21" fill="#555d65">ケースが浮く、すき間ができる</text><text x="112" y="138" font-size="21" fill="#555d65">平らな場所でがたつく</text></g>
+    <g transform="translate(508 224)"><rect width="360" height="180" rx="20" fill="#fff" stroke="#d4cfc3" stroke-width="2"/><circle cx="62" cy="62" r="30" fill="#ef9e3f"/><text x="62" y="73" text-anchor="middle" font-size="32">♨</text><text x="112" y="61" font-size="30" font-weight="700" fill="#16191d">異常な熱</text><text x="112" y="105" font-size="21" fill="#555d65">触れ続けられないほど熱い</text><text x="112" y="138" font-size="21" fill="#555d65">以前より温度が上がる</text></g>
+    <g transform="translate(928 224)"><rect width="360" height="180" rx="20" fill="#fff" stroke="#d4cfc3" stroke-width="2"/><circle cx="62" cy="62" r="30" fill="#ef6a4b"/><text x="62" y="73" text-anchor="middle" font-size="32">!</text><text x="112" y="61" font-size="30" font-weight="700" fill="#16191d">異臭・煙</text><text x="112" y="105" font-size="21" fill="#555d65">刺激臭、焦げたような臭い</text><text x="112" y="138" font-size="21" fill="#555d65">白煙や液漏れ</text></g>
+    <g transform="translate(298 452)"><rect width="360" height="180" rx="20" fill="#fff" stroke="#d4cfc3" stroke-width="2"/><circle cx="62" cy="62" r="30" fill="#f2c84b"/><text x="62" y="73" text-anchor="middle" font-size="28">♪</text><text x="112" y="61" font-size="30" font-weight="700" fill="#16191d">異音</text><text x="112" y="105" font-size="21" fill="#555d65">シュー、パチパチという音</text><text x="112" y="138" font-size="21" fill="#555d65">内部で部品が動く音</text></g>
+    <g transform="translate(718 452)"><rect width="360" height="180" rx="20" fill="#fff" stroke="#d4cfc3" stroke-width="2"/><circle cx="62" cy="62" r="30" fill="#ef9e3f"/><text x="62" y="73" text-anchor="middle" font-size="32">×</text><text x="112" y="61" font-size="30" font-weight="700" fill="#16191d">充電の不具合</text><text x="112" y="105" font-size="21" fill="#555d65">充電できない、すぐ切れる</text><text x="112" y="138" font-size="21" fill="#555d65">端子が焦げる・変色する</text></g>
+  </g>
+  <text x="688" y="706" text-anchor="middle" fill="#7a2c20" font-family="sans-serif" font-size="25" font-weight="700">異常品は家庭ごみに入れず、自治体・販売店の案内に従って処分</text>
+</svg>

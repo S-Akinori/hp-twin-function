@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1376" height="768" viewBox="0 0 1376 768" role="img" aria-labelledby="title desc">
+  <title id="title">モバイルバッテリーが発火するまでの熱暴走の流れ</title>
+  <desc id="desc">衝撃や高温、劣化などをきっかけに内部短絡、発熱、電解液の分解、熱暴走、発煙・発火へ進む流れを示す図。</desc>
+  <rect width="1376" height="768" fill="#111418"/>
+  <text x="88" y="112" fill="#f7f4ec" font-family="sans-serif" font-size="48" font-weight="700">発火につながる「熱暴走」の流れ</text>
+  <text x="88" y="158" fill="#a8afb8" font-family="sans-serif" font-size="24">異常な発熱が次の反応を呼び、短時間で連鎖する</text>
+  <g font-family="sans-serif" text-anchor="middle">
+    <g transform="translate(80 250)"><rect width="216" height="250" rx="18" fill="#20252b" stroke="#68717c" stroke-width="2"/><circle cx="108" cy="70" r="34" fill="#f2c84b"/><text x="108" y="79" font-size="28">1</text><text x="108" y="145" fill="#fff" font-size="28" font-weight="700">きっかけ</text><text x="108" y="186" fill="#c9ced4" font-size="20">衝撃・高温</text><text x="108" y="218" fill="#c9ced4" font-size="20">水ぬれ・劣化</text></g>
+    <path d="M310 375h48" stroke="#f2c84b" stroke-width="8"/><path d="m355 356 28 19-28 19" fill="#f2c84b"/>
+    <g transform="translate(390 250)"><rect width="216" height="250" rx="18" fill="#20252b" stroke="#68717c" stroke-width="2"/><circle cx="108" cy="70" r="34" fill="#f2c84b"/><text x="108" y="79" font-size="28">2</text><text x="108" y="145" fill="#fff" font-size="28" font-weight="700">内部短絡</text><text x="108" y="186" fill="#c9ced4" font-size="20">セパレーター損傷</text><text x="108" y="218" fill="#c9ced4" font-size="20">大電流が流れる</text></g>
+    <path d="M620 375h48" stroke="#f2c84b" stroke-width="8"/><path d="m665 356 28 19-28 19" fill="#f2c84b"/>
+    <g transform="translate(700 250)"><rect width="216" height="250" rx="18" fill="#20252b" stroke="#68717c" stroke-width="2"/><circle cx="108" cy="70" r="34" fill="#ef9e3f"/><text x="108" y="79" font-size="28">3</text><text x="108" y="145" fill="#fff" font-size="28" font-weight="700">急激に発熱</text><text x="108" y="186" fill="#c9ced4" font-size="20">内部反応が加速</text><text x="108" y="218" fill="#c9ced4" font-size="20">可燃性ガス発生</text></g>
+    <path d="M930 375h48" stroke="#ef7a3f" stroke-width="8"/><path d="m975 356 28 19-28 19" fill="#ef7a3f"/>
+    <g transform="translate(1010 250)"><rect width="286" height="250" rx="18" fill="#321c1b" stroke="#ef6a4b" stroke-width="3"/><circle cx="143" cy="70" r="34" fill="#ef6a4b"/><text x="143" y="79" font-size="28">4</text><text x="143" y="145" fill="#fff" font-size="28" font-weight="700">熱暴走</text><text x="143" y="186" fill="#ffd7cd" font-size="20">発煙・破裂・発火</text><text x="143" y="218" fill="#ffd7cd" font-size="20">周囲へ延焼する危険</text></g>
+  </g>
+  <rect x="88" y="580" width="1200" height="92" rx="16" fill="#191f24" stroke="#f2c84b" stroke-width="2"/>
+  <text x="120" y="635" fill="#f7f4ec" font-family="sans-serif" font-size="25" font-weight="700">止めるポイント：</text><text x="320" y="635" fill="#d7dce1" font-family="sans-serif" font-size="24">異常な熱・膨らみ・臭い・音に気づいたら、充電せず使用を中止する</text>
+</svg>
