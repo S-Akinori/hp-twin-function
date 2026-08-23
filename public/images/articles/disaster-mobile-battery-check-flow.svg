@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">防災用モバイルバッテリー選び方フロー</title><desc id="desc">携帯性、家族分、長期停電の条件からタイプを選ぶ流れ</desc>
+  <rect width="1200" height="760" rx="36" fill="#12202c"/><g font-family="sans-serif"><text x="600" y="76" text-anchor="middle" font-size="40" font-weight="700" fill="#fff">3つの質問で選ぶ防災バッテリー</text>
+  <rect x="350" y="120" width="500" height="90" rx="22" fill="#fff"/><text x="600" y="176" text-anchor="middle" font-size="25" font-weight="700" fill="#1f2933">Q1. 避難時に常に持ち歩く？</text>
+  <path d="M470 210v65M730 210v65" stroke="#cbd5df" stroke-width="4"/><text x="430" y="250" fill="#ffe08a" font-size="20">YES</text><text x="745" y="250" fill="#9bd3c7" font-size="20">NO／自宅備蓄</text>
+  <rect x="170" y="275" width="430" height="95" rx="22" fill="#ffe08a"/><text x="385" y="333" text-anchor="middle" font-size="25" font-weight="700" fill="#1f2933">5,000〜10,000mAh</text>
+  <rect x="650" y="275" width="380" height="95" rx="22" fill="#9bd3c7"/><text x="840" y="315" text-anchor="middle" font-size="24" font-weight="700" fill="#1f2933">Q2. 家族・複数台で使う？</text><text x="840" y="347" text-anchor="middle" font-size="18" fill="#334e68">YESなら20,000mAhも検討</text>
+  <path d="M600 322h50M385 370v70M840 370v70" stroke="#cbd5df" stroke-width="4"/>
+  <rect x="170" y="440" width="430" height="105" rx="22" fill="#fff"/><text x="385" y="481" text-anchor="middle" font-size="23" font-weight="700" fill="#1f2933">USB-C・PSE・重量を確認</text><text x="385" y="516" text-anchor="middle" font-size="19" fill="#52606d">ケーブルもセットで保管</text>
+  <rect x="650" y="440" width="380" height="105" rx="22" fill="#fff"/><text x="840" y="481" text-anchor="middle" font-size="23" font-weight="700" fill="#1f2933">Q3. 長期停電にも備える？</text><text x="840" y="516" text-anchor="middle" font-size="19" fill="#52606d">YESなら予備方式を追加</text>
+  <path d="M840 545v62" stroke="#cbd5df" stroke-width="4"/><rect x="500" y="607" width="680" height="105" rx="22" fill="#f4b7a5"/><text x="840" y="651" text-anchor="middle" font-size="24" font-weight="700" fill="#1f2933">乾電池式 または 折りたたみソーラーパネル</text><text x="840" y="685" text-anchor="middle" font-size="19" fill="#52606d">主力バッテリーの代替ではなく「補助」として備える</text>
+  <rect x="20" y="607" width="430" height="105" rx="22" fill="#263b4b"/><text x="235" y="650" text-anchor="middle" font-size="22" font-weight="700" fill="#fff">毎月1回、残量と膨張を点検</text><text x="235" y="684" text-anchor="middle" font-size="18" fill="#cbd5df">防災用品と一緒に定期充電</text></g>
+</svg>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="t d">
+  <title id="t">WとWhの違いと使用時間の計算</title><desc id="d">Wは動かせる機器の大きさ、Whは電気をためられる量で、使用時間は容量かける変換効率を消費電力で割って求める</desc>
+  <rect width="1200" height="720" rx="36" fill="#202522"/>
+  <text x="600" y="78" text-anchor="middle" font-family="sans-serif" font-size="38" font-weight="700" fill="#fff">WとWhは役割が違う</text>
+  <g font-family="sans-serif">
+    <rect x="70" y="125" width="500" height="260" rx="28" fill="#f6dfb6"/><text x="120" y="195" font-size="58" font-weight="800" fill="#202522">W</text><text x="230" y="190" font-size="29" font-weight="700" fill="#202522">出力</text><text x="120" y="250" font-size="24" fill="#4d4538">「どの機器を動かせるか」</text><text x="120" y="305" font-size="21" fill="#4d4538">例：定格300Wなら、原則300W以下</text><text x="120" y="344" font-size="21" fill="#4d4538">起動時に大電力を使う機器は要注意</text>
+    <rect x="630" y="125" width="500" height="260" rx="28" fill="#dbeadf"/><text x="680" y="195" font-size="58" font-weight="800" fill="#202522">Wh</text><text x="840" y="190" font-size="29" font-weight="700" fill="#202522">容量</text><text x="680" y="250" font-size="24" fill="#30473a">「どれくらい長く使えるか」</text><text x="680" y="305" font-size="21" fill="#30473a">数字が大きいほど長時間使える</text><text x="680" y="344" font-size="21" fill="#30473a">ただし本体は重く、大きくなりやすい</text>
+    <rect x="130" y="440" width="940" height="170" rx="28" fill="#fff"/><text x="600" y="493" text-anchor="middle" font-size="25" font-weight="700" fill="#202522">使用時間の目安</text><text x="600" y="548" text-anchor="middle" font-size="34" font-weight="800" fill="#202522">容量（Wh）× 0.8 ÷ 消費電力（W）</text><text x="600" y="590" text-anchor="middle" font-size="21" fill="#5b635e">288Whで60Wの電気毛布 → 約3.8時間（目安）</text>
+    <text x="600" y="672" text-anchor="middle" font-size="19" fill="#c8cec9">実際の時間は変換ロス・温度・機器の動作で変わります</text>
+  </g>
+</svg>

@@ -1,0 +1,192 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/ui/PageHero.astro";
+---
+
+<BaseLayout
+  title="お問い合わせ | Twin Function"
+  description="Twin Functionの製品、購入、使い方に関するお問い合わせはこちらから。"
+  enableScrollAnimation
+>
+  <main>
+    <PageHero
+      eyebrow="Contact"
+      title="お問い合わせ"
+      description="製品についてのご質問や購入前のご相談など、お気軽にお問い合わせください。内容を確認のうえ、担当者よりご連絡します。"
+      compact
+    />
+
+    <section class="relative overflow-hidden bg-[linear-gradient(180deg,#07111f,#050b15)] px-5 pb-28 pt-20 sm:px-8 lg:px-16 lg:pb-36 lg:pt-28">
+      <div class="soft-grid absolute inset-0 opacity-40" aria-hidden="true"></div>
+      <div class="absolute -right-40 top-8 h-[28rem] w-[28rem] rounded-full bg-sky-300/[0.08] blur-3xl" aria-hidden="true"></div>
+
+      <div class="relative mx-auto grid max-w-[1320px] gap-12 lg:grid-cols-[0.72fr_1.28fr] lg:gap-20">
+        <aside class="lg:pt-8">
+          <p class="eyebrow">Before you send</p>
+          <h2 class="mt-6 text-3xl font-semibold leading-tight tracking-[-0.02em] text-white sm:text-4xl">
+            ご相談内容を<br class="hidden lg:block" />お聞かせください
+          </h2>
+          <p class="mt-6 max-w-md text-base leading-8 text-white/62">
+            製品の仕様や使い方については、よくある質問もご用意しています。お急ぎの場合は、あわせてご確認ください。
+          </p>
+          <a
+            href="/faq"
+            class="mt-8 inline-flex items-center gap-3 font-semibold text-gold-400 transition duration-300 hover:gap-4 hover:text-gold-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-400 focus-visible:ring-offset-4 focus-visible:ring-offset-ink-950"
+          >
+            よくある質問を見る <span aria-hidden="true">→</span>
+          </a>
+
+          <dl class="mt-12 grid gap-6 border-t border-white/10 pt-8 text-sm leading-7">
+            <div>
+              <dt class="font-semibold text-white">ご返信について</dt>
+              <dd class="mt-1 text-white/55">お問い合わせ内容を確認後、メールでご連絡します。</dd>
+            </div>
+            <div>
+              <dt class="font-semibold text-white">入力いただく情報</dt>
+              <dd class="mt-1 text-white/55">お名前、メールアドレス、お問い合わせ内容の3点です。</dd>
+            </div>
+          </dl>
+        </aside>
+
+        <div class="rounded-[1.5rem] border border-white/10 bg-white/[0.045] p-6 shadow-[0_28px_80px_-36px_rgba(1,8,18,0.9)] backdrop-blur-sm sm:p-9 lg:p-12">
+          <form
+            action="https://formlet.a-key33.com/api/f/9fb43440-25d1-497f-9941-bf344809d9d1"
+            method="POST"
+            target="contact-submit-target"
+            class="grid gap-7"
+            data-contact-form
+          >
+            <label class="grid gap-3 text-sm font-semibold text-white" for="contact-name">
+              <span>お名前 <span class="ml-1 text-xs text-gold-400">必須</span></span>
+              <input
+                id="contact-name"
+                name="name"
+                required
+                autocomplete="name"
+                class="min-h-14 rounded-lg border border-white/12 bg-ink-950/55 px-4 text-base font-normal text-white outline-none transition duration-300 placeholder:text-white/28 hover:border-white/25 focus:border-gold-400 focus:ring-2 focus:ring-gold-400/20"
+                placeholder="山田 太郎"
+              />
+            </label>
+
+            <label class="grid gap-3 text-sm font-semibold text-white" for="contact-email">
+              <span>メールアドレス <span class="ml-1 text-xs text-gold-400">必須</span></span>
+              <input
+                id="contact-email"
+                name="email"
+                type="email"
+                required
+                autocomplete="email"
+                inputmode="email"
+                class="min-h-14 rounded-lg border border-white/12 bg-ink-950/55 px-4 text-base font-normal text-white outline-none transition duration-300 placeholder:text-white/28 hover:border-white/25 focus:border-gold-400 focus:ring-2 focus:ring-gold-400/20"
+                placeholder="example@email.com"
+              />
+            </label>
+
+            <label class="grid gap-3 text-sm font-semibold text-white" for="contact-message">
+              <span>お問い合わせ内容 <span class="ml-1 text-xs text-gold-400">必須</span></span>
+              <textarea
+                id="contact-message"
+                name="message"
+                required
+                rows="7"
+                class="min-h-48 resize-y rounded-lg border border-white/12 bg-ink-950/55 px-4 py-4 text-base font-normal leading-7 text-white outline-none transition duration-300 placeholder:text-white/28 hover:border-white/25 focus:border-gold-400 focus:ring-2 focus:ring-gold-400/20"
+                placeholder="お問い合わせ内容をご入力ください"
+              ></textarea>
+            </label>
+
+            <input name="_formlet_hp" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true" />
+
+            <div class="mt-1 flex flex-col-reverse gap-4 sm:flex-row sm:items-center sm:justify-between">
+              <p class="text-xs leading-6 text-white/42">送信ボタンを押すと、入力内容が送信されます。</p>
+              <button
+                type="submit"
+                class="yellow-button min-w-44 gap-3 px-9 py-4 text-base focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-4 focus-visible:ring-offset-ink-950 disabled:cursor-wait disabled:opacity-60 disabled:hover:translate-y-0"
+                data-submit-button
+              >
+                <span data-button-label>送信する</span>
+                <span aria-hidden="true" data-button-arrow>→</span>
+              </button>
+            </div>
+
+            <div
+              class="hidden rounded-lg border px-4 py-4 text-sm leading-7"
+              role="status"
+              aria-live="polite"
+              data-form-status
+            ></div>
+          </form>
+          <iframe
+            name="contact-submit-target"
+            title="お問い合わせフォーム送信先"
+            class="hidden"
+            tabindex="-1"
+            aria-hidden="true"
+            data-submit-target
+          ></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<script>
+  const form = document.querySelector("[data-contact-form]");
+
+  if (form instanceof HTMLFormElement) {
+    const submitButton = form.querySelector("[data-submit-button]");
+    const buttonLabel = form.querySelector("[data-button-label]");
+    const buttonArrow = form.querySelector("[data-button-arrow]");
+    const status = form.querySelector("[data-form-status]");
+    const submitTarget = document.querySelector("[data-submit-target]");
+    let isSubmitting = false;
+
+    const setStatus = (type: "success" | "error", message: string) => {
+      if (!(status instanceof HTMLElement)) return;
+      status.textContent = message;
+      status.classList.remove(
+        "hidden",
+        "border-gold-400/30",
+        "bg-gold-400/[0.08]",
+        "text-gold-400",
+        "border-red-300/30",
+        "bg-red-300/[0.08]",
+        "text-red-100",
+      );
+      status.classList.add(
+        ...(type === "success"
+          ? ["border-gold-400/30", "bg-gold-400/[0.08]", "text-gold-400"]
+          : ["border-red-300/30", "bg-red-300/[0.08]", "text-red-100"]),
+      );
+    };
+
+    form.addEventListener("submit", (event) => {
+      if (!form.reportValidity() || !(submitButton instanceof HTMLButtonElement)) return;
+
+      if (isSubmitting) {
+        event.preventDefault();
+        return;
+      }
+
+      isSubmitting = true;
+      submitButton.disabled = true;
+      submitButton.setAttribute("aria-busy", "true");
+      if (buttonLabel) buttonLabel.textContent = "送信中";
+      if (buttonArrow) buttonArrow.textContent = "…";
+      if (status instanceof HTMLElement) status.classList.add("hidden");
+    });
+
+    if (submitTarget instanceof HTMLIFrameElement) {
+      submitTarget.addEventListener("load", () => {
+        if (!isSubmitting || !(submitButton instanceof HTMLButtonElement)) return;
+
+        isSubmitting = false;
+        form.reset();
+        setStatus("success", "お問い合わせを受け付けました。内容を確認のうえ、担当者よりご連絡します。");
+        submitButton.disabled = false;
+        submitButton.removeAttribute("aria-busy");
+        if (buttonLabel) buttonLabel.textContent = "送信する";
+        if (buttonArrow) buttonArrow.textContent = "→";
+      });
+    }
+  }
+</script>

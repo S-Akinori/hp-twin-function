@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760">
+  <rect width="1200" height="760" fill="#f7f4ed"/><text x="70" y="88" font-family="sans-serif" font-size="42" font-weight="700" fill="#171717">防災グッズの中身は「3段階」で選ぶ</text>
+  <g font-family="sans-serif">
+    <rect x="70" y="140" width="1060" height="160" rx="22" fill="#202420"/><text x="110" y="195" font-size="30" font-weight="700" fill="#ffd34d">必ず入れる｜命と避難に直結</text><text x="110" y="245" font-size="25" fill="#fff">水・非常食・常備薬・ライト・携帯ラジオ・予備電池・携帯トイレ・現金・身分証の控え</text>
+    <rect x="70" y="325" width="1060" height="160" rx="22" fill="#e5b93f"/><text x="110" y="380" font-size="30" font-weight="700" fill="#171717">あると便利｜負担を減らす</text><text x="110" y="430" font-size="25" fill="#171717">モバイルバッテリー・ウェットティッシュ・ラップ・タオル・耳栓・アイマスク・筆記具</text>
+    <rect x="70" y="510" width="1060" height="160" rx="22" fill="#e5e0d5"/><text x="110" y="565" font-size="30" font-weight="700" fill="#171717">後回しでよい｜重さと用途で判断</text><text x="110" y="615" font-size="25" fill="#444">大きな調理器具・大量の衣類・重複する多機能品・使い方を試していない用品</text>
+  </g><text x="70" y="720" font-family="sans-serif" font-size="21" fill="#555">家族構成、持病、季節、地域の災害リスクに合わせて入れ替えましょう。</text>
+</svg>

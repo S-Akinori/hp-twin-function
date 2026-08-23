@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">PSEマークだけに頼らないモバイルバッテリーの安全確認フロー</title>
+  <desc id="desc">PSE表示、販売者情報、リコール、外観と使用方法を順に確認する図解</desc>
+  <rect width="1200" height="720" fill="#f4f0e8"/>
+  <text x="600" y="82" text-anchor="middle" fill="#17191b" font-family="sans-serif" font-size="40" font-weight="700">PSEマークは「安全確認の入口」</text>
+  <text x="600" y="122" text-anchor="middle" fill="#60666a" font-family="sans-serif" font-size="21">表示を確認したうえで、購入先・リコール・状態まで見る</text>
+  <g font-family="sans-serif">
+    <rect x="80" y="202" width="220" height="250" rx="24" fill="#17191b"/>
+    <circle cx="190" cy="266" r="32" fill="#d6b66f"/><text x="190" y="277" text-anchor="middle" fill="#17191b" font-size="30" font-weight="700">1</text>
+    <text x="190" y="335" text-anchor="middle" fill="#fff" font-size="26" font-weight="700">表示</text>
+    <text x="190" y="378" text-anchor="middle" fill="#cdd0d2" font-size="18">PSE・事業者名</text><text x="190" y="407" text-anchor="middle" fill="#cdd0d2" font-size="18">電圧・容量</text>
+    <path d="M310 327h54" stroke="#b89b5e" stroke-width="8"/><path d="m354 311 20 16-20 16" fill="none" stroke="#b89b5e" stroke-width="8"/>
+    <rect x="380" y="202" width="220" height="250" rx="24" fill="#272b2e"/>
+    <circle cx="490" cy="266" r="32" fill="#d6b66f"/><text x="490" y="277" text-anchor="middle" fill="#17191b" font-size="30" font-weight="700">2</text>
+    <text x="490" y="335" text-anchor="middle" fill="#fff" font-size="26" font-weight="700">販売者</text>
+    <text x="490" y="378" text-anchor="middle" fill="#cdd0d2" font-size="18">連絡先・保証</text><text x="490" y="407" text-anchor="middle" fill="#cdd0d2" font-size="18">説明が明確か</text>
+    <path d="M610 327h54" stroke="#b89b5e" stroke-width="8"/><path d="m654 311 20 16-20 16" fill="none" stroke="#b89b5e" stroke-width="8"/>
+    <rect x="680" y="202" width="220" height="250" rx="24" fill="#272b2e"/>
+    <circle cx="790" cy="266" r="32" fill="#d6b66f"/><text x="790" y="277" text-anchor="middle" fill="#17191b" font-size="30" font-weight="700">3</text>
+    <text x="790" y="335" text-anchor="middle" fill="#fff" font-size="26" font-weight="700">リコール</text>
+    <text x="790" y="378" text-anchor="middle" fill="#cdd0d2" font-size="18">型番を検索</text><text x="790" y="407" text-anchor="middle" fill="#cdd0d2" font-size="18">対象なら使用中止</text>
+    <path d="M910 327h54" stroke="#b89b5e" stroke-width="8"/><path d="m954 311 20 16-20 16" fill="none" stroke="#b89b5e" stroke-width="8"/>
+    <rect x="980" y="202" width="140" height="250" rx="24" fill="#8a3d33"/>
+    <circle cx="1050" cy="266" r="32" fill="#f4f0e8"/><text x="1050" y="277" text-anchor="middle" fill="#8a3d33" font-size="30" font-weight="700">4</text>
+    <text x="1050" y="335" text-anchor="middle" fill="#fff" font-size="26" font-weight="700">状態</text>
+    <text x="1050" y="378" text-anchor="middle" fill="#fff" font-size="17">膨張・発熱</text><text x="1050" y="407" text-anchor="middle" fill="#fff" font-size="17">異臭なら中止</text>
+  </g>
+  <rect x="170" y="520" width="860" height="105" rx="52" fill="#d6b66f"/>
+  <text x="600" y="565" text-anchor="middle" fill="#17191b" font-family="sans-serif" font-size="26" font-weight="700">4つとも確認して、取扱説明書どおりに使う</text>
+  <text x="600" y="600" text-anchor="middle" fill="#403a2e" font-family="sans-serif" font-size="19">PSE表示があっても、誤使用や劣化による事故を完全には防げません</text>
+</svg>

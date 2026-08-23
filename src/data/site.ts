@@ -5,6 +5,7 @@ export const navItems = [
   { label: "スペック", href: "/spec" },
   { label: "FAQ", href: "/faq" },
   { label: "ブログ", href: "/blog" },
+  { label: "お問い合わせ", href: "/contact" },
 ];
 
 export const heroFeatures = [

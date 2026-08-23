@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">5000mAhモバイルバッテリーが向く人の判断図</title>
+  <desc id="desc">用途別に5000mAhと10000mAh以上を選び分けるフローチャート</desc>
+  <rect width="1200" height="675" fill="#f7f5ef"/>
+  <text x="600" y="80" text-anchor="middle" fill="#122033" font-family="sans-serif" font-size="40" font-weight="800">あなたに5000mAhは足りる？</text>
+  <rect x="390" y="120" width="420" height="82" rx="18" fill="#122033"/>
+  <text x="600" y="171" text-anchor="middle" fill="#fff" font-family="sans-serif" font-size="24" font-weight="700">充電は外出中の“あと少し”が中心？</text>
+  <path d="M600 202v55M600 257H300M600 257h300" stroke="#6a7686" stroke-width="4" fill="none"/>
+  <text x="300" y="245" text-anchor="middle" fill="#18735f" font-family="sans-serif" font-size="22" font-weight="700">YES</text>
+  <text x="900" y="245" text-anchor="middle" fill="#9a4a37" font-family="sans-serif" font-size="22" font-weight="700">NO</text>
+  <rect x="105" y="280" width="390" height="235" rx="24" fill="#dff3ea" stroke="#7ebaa8" stroke-width="2"/>
+  <text x="300" y="335" text-anchor="middle" fill="#0b5c4b" font-family="sans-serif" font-size="30" font-weight="800">5000mAh向き</text>
+  <text x="145" y="388" fill="#18372f" font-family="sans-serif" font-size="21">✓ 荷物を軽くしたい</text>
+  <text x="145" y="430" fill="#18372f" font-family="sans-serif" font-size="21">✓ スマホは1台だけ</text>
+  <text x="145" y="472" fill="#18372f" font-family="sans-serif" font-size="21">✓ 毎晩コンセントで充電できる</text>
+  <rect x="705" y="280" width="390" height="235" rx="24" fill="#f8e9df" stroke="#d4a088" stroke-width="2"/>
+  <text x="900" y="335" text-anchor="middle" fill="#863e2f" font-family="sans-serif" font-size="30" font-weight="800">10000mAh以上を検討</text>
+  <text x="745" y="388" fill="#49312b" font-family="sans-serif" font-size="21">✓ 満充電を1回以上確保したい</text>
+  <text x="745" y="430" fill="#49312b" font-family="sans-serif" font-size="21">✓ 2台以上を充電する</text>
+  <text x="745" y="472" fill="#49312b" font-family="sans-serif" font-size="21">✓ 旅行・動画・ゲームで長時間使う</text>
+  <text x="600" y="590" text-anchor="middle" fill="#5b6675" font-family="sans-serif" font-size="22">容量より「持ち歩けるか」を優先すると、使わなくなる失敗を防げます。</text>
+</svg>

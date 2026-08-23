@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">40,000mAhモバイルバッテリーの飛行機持ち込み判断</title>
+  <desc id="desc">40,000mAhを3.7Vで換算すると148Wh。160Wh以下だが、預け入れは禁止で機内持ち込みのみ。2026年4月24日以降は2個までで機内使用と充電は禁止</desc>
+  <rect width="1200" height="675" fill="#111315"/>
+  <text x="72" y="86" fill="#f2c96d" font-family="Arial, sans-serif" font-size="34" font-weight="700">飛行機に持ち込める？</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="72" y="140" width="1056" height="110" rx="18" fill="#1c2024" stroke="#343a40"/>
+    <text x="110" y="185" fill="#aeb3b8" font-size="20">Whへの換算</text><text x="110" y="224" fill="#fff" font-size="28" font-weight="700">40,000mAh ÷ 1,000 × 3.7V ＝ 約148Wh</text>
+    <path d="M600 264v55" stroke="#f2c96d" stroke-width="5"/><path d="M580 302l20 20 20-20" fill="none" stroke="#f2c96d" stroke-width="5"/>
+    <rect x="72" y="334" width="504" height="178" rx="18" fill="#18271f" stroke="#4b9b6c"/>
+    <text x="110" y="383" fill="#72d494" font-size="26" font-weight="700">機内持ち込み</text><text x="110" y="430" fill="#fff" font-size="24">○ 160Wh以下</text><text x="110" y="470" fill="#c8c9cb" font-size="19">1人2個まで・端子を保護</text>
+    <rect x="624" y="334" width="504" height="178" rx="18" fill="#2a1b1b" stroke="#bd5c5c"/>
+    <text x="662" y="383" fill="#f07d7d" font-size="26" font-weight="700">預け入れ手荷物</text><text x="662" y="430" fill="#fff" font-size="24">× 禁止</text><text x="662" y="470" fill="#c8c9cb" font-size="19">スーツケースへ入れない</text>
+    <text x="72" y="568" fill="#f2c96d" font-size="21" font-weight="700">2026年4月24日以降：機内でバッテリーへの充電・機器への給電はしない</text>
+    <text x="72" y="615" fill="#8e949a" font-size="17">※日本発着便の基準。航空会社・渡航先・表示の有無で扱いが異なるため、搭乗前に必ず確認してください。</text>
+  </g>
+</svg>

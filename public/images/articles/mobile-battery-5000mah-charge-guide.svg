@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">5000mAhモバイルバッテリーの充電回数目安</title>
+  <desc id="desc">実際に使える容量を約3500から4000mAhとして、スマートフォン容量別の充電回数を示す図</desc>
+  <rect width="1200" height="675" fill="#08111f"/>
+  <circle cx="1060" cy="70" r="230" fill="#f5c542" opacity=".08"/>
+  <text x="72" y="88" fill="#f5c542" font-family="sans-serif" font-size="24" font-weight="700">5000mAhの実力</text>
+  <text x="72" y="143" fill="#fff" font-family="sans-serif" font-size="42" font-weight="800">スマホ充電は「約0.7〜1回」が目安</text>
+  <text x="72" y="190" fill="#aebbd0" font-family="sans-serif" font-size="22">変換ロスを考慮し、実際に使える容量を表示容量の約70〜80%で試算</text>
+  <g transform="translate(72 245)">
+    <rect width="320" height="285" rx="22" fill="#111f33" stroke="#29415f"/>
+    <text x="28" y="48" fill="#aebbd0" font-family="sans-serif" font-size="21">スマホ 3,000mAh</text>
+    <text x="28" y="118" fill="#fff" font-family="sans-serif" font-size="54" font-weight="800">約1回</text>
+    <rect x="28" y="158" width="264" height="22" rx="11" fill="#263a55"/>
+    <rect x="28" y="158" width="250" height="22" rx="11" fill="#f5c542"/>
+    <text x="28" y="230" fill="#dbe5f3" font-family="sans-serif" font-size="19">小型スマホなら満充電に</text>
+    <text x="28" y="258" fill="#dbe5f3" font-family="sans-serif" font-size="19">届く可能性が高い</text>
+  </g>
+  <g transform="translate(440 245)">
+    <rect width="320" height="285" rx="22" fill="#111f33" stroke="#29415f"/>
+    <text x="28" y="48" fill="#aebbd0" font-family="sans-serif" font-size="21">スマホ 4,000mAh</text>
+    <text x="28" y="118" fill="#fff" font-family="sans-serif" font-size="54" font-weight="800">約0.9回</text>
+    <rect x="28" y="158" width="264" height="22" rx="11" fill="#263a55"/>
+    <rect x="28" y="158" width="230" height="22" rx="11" fill="#f5c542"/>
+    <text x="28" y="230" fill="#dbe5f3" font-family="sans-serif" font-size="19">外出先の継ぎ足し充電に</text>
+    <text x="28" y="258" fill="#dbe5f3" font-family="sans-serif" font-size="19">ちょうどよい容量</text>
+  </g>
+  <g transform="translate(808 245)">
+    <rect width="320" height="285" rx="22" fill="#111f33" stroke="#29415f"/>
+    <text x="28" y="48" fill="#aebbd0" font-family="sans-serif" font-size="21">スマホ 5,000mAh</text>
+    <text x="28" y="118" fill="#fff" font-family="sans-serif" font-size="54" font-weight="800">約0.7回</text>
+    <rect x="28" y="158" width="264" height="22" rx="11" fill="#263a55"/>
+    <rect x="28" y="158" width="185" height="22" rx="11" fill="#f5c542"/>
+    <text x="28" y="230" fill="#dbe5f3" font-family="sans-serif" font-size="19">大容量スマホでは</text>
+    <text x="28" y="258" fill="#dbe5f3" font-family="sans-serif" font-size="19">満充電1回未満</text>
+  </g>
+  <text x="72" y="606" fill="#8fa1b8" font-family="sans-serif" font-size="18">※端末の使用状況、ケーブル、温度、充電方式により実際の回数は前後します。</text>
+</svg>

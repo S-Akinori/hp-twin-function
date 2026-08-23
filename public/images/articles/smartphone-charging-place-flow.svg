@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">外出先でスマホを充電する場所の選び方</title>
+  <desc id="desc">移動しながら使うならレンタル充電器、30分以上滞在できるなら充電席、費用を抑えて今後も備えるなら乾電池式モバイルバッテリーを選ぶ図</desc>
+  <rect width="1200" height="760" rx="40" fill="#071321"/>
+  <text x="600" y="86" text-anchor="middle" fill="#fff" font-family="sans-serif" font-size="40" font-weight="700">今すぐ充電したいときの選び方</text>
+  <rect x="390" y="130" width="420" height="100" rx="24" fill="#f4c430"/>
+  <text x="600" y="190" text-anchor="middle" fill="#071321" font-family="sans-serif" font-size="30" font-weight="700">移動しながらスマホを使う？</text>
+  <path d="M600 230v62M600 292H270M600 292h330" stroke="#f4c430" stroke-width="8" fill="none" stroke-linecap="round"/>
+  <text x="280" y="282" text-anchor="middle" fill="#f4c430" font-family="sans-serif" font-size="24" font-weight="700">はい</text>
+  <text x="920" y="282" text-anchor="middle" fill="#f4c430" font-family="sans-serif" font-size="24" font-weight="700">いいえ</text>
+  <rect x="70" y="320" width="400" height="160" rx="28" fill="#fff"/>
+  <text x="270" y="382" text-anchor="middle" fill="#071321" font-family="sans-serif" font-size="30" font-weight="700">レンタル充電器</text>
+  <text x="270" y="430" text-anchor="middle" fill="#344054" font-family="sans-serif" font-size="23">借りたまま移動できる</text>
+  <rect x="730" y="320" width="400" height="160" rx="28" fill="#fff"/>
+  <text x="930" y="382" text-anchor="middle" fill="#071321" font-family="sans-serif" font-size="30" font-weight="700">コンセント・充電席</text>
+  <text x="930" y="430" text-anchor="middle" fill="#344054" font-family="sans-serif" font-size="23">カフェ・駅・商業施設で確認</text>
+  <path d="M270 480v86M930 480v86" stroke="#f4c430" stroke-width="8" stroke-linecap="round"/>
+  <rect x="170" y="566" width="860" height="130" rx="28" fill="#14283d" stroke="#f4c430" stroke-width="3"/>
+  <text x="600" y="620" text-anchor="middle" fill="#fff" font-family="sans-serif" font-size="29" font-weight="700">次回の出費と場所探しを減らすなら</text>
+  <text x="600" y="665" text-anchor="middle" fill="#f4c430" font-family="sans-serif" font-size="27" font-weight="700">乾電池式モバイルバッテリーをバッグに常備</text>
+</svg>

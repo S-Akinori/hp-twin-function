@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">防災グッズの優先順位</title>
+  <desc id="desc">命、避難、個別事情、快適性の順で防災グッズを選ぶ図</desc>
+  <rect width="1200" height="675" fill="#f7f4ee"/>
+  <text x="80" y="90" font-family="sans-serif" font-size="46" font-weight="700" fill="#20252b">本当に必要なものは「命」から選ぶ</text>
+  <text x="82" y="134" font-family="sans-serif" font-size="22" fill="#5a6168">下から順にそろえると、重すぎない持ち出し袋になります</text>
+  <g font-family="sans-serif" text-anchor="middle">
+    <path d="M410 548h380l-48-104H458z" fill="#e2543d"/>
+    <text x="600" y="494" font-size="30" font-weight="700" fill="white">最優先｜命を守る</text>
+    <text x="600" y="526" font-size="18" fill="white">水・常備薬・ライト・連絡手段</text>
+    <path d="M458 424h284l-44-96H502z" fill="#e98a3b"/>
+    <text x="600" y="371" font-size="27" font-weight="700" fill="white">避難を続ける</text>
+    <text x="600" y="401" font-size="17" fill="white">携帯トイレ・雨具・手袋・現金</text>
+    <path d="M502 308h196l-38-82H540z" fill="#d7ad3f"/>
+    <text x="600" y="263" font-size="24" font-weight="700" fill="#20252b">自分専用</text>
+    <text x="600" y="291" font-size="16" fill="#20252b">乳幼児・介護・アレルギー用品</text>
+    <path d="M540 206h120l-60-62z" fill="#8e9b79"/>
+    <text x="600" y="188" font-size="18" font-weight="700" fill="white">快適性</text>
+  </g>
+  <g font-family="sans-serif" fill="#20252b">
+    <rect x="80" y="202" width="275" height="278" rx="24" fill="white" stroke="#ded9cf"/>
+    <text x="112" y="252" font-size="25" font-weight="700">判断の3問</text>
+    <text x="112" y="310" font-size="21">① ないと命に関わる？</text>
+    <text x="112" y="365" font-size="21">② 代用品がない？</text>
+    <text x="112" y="420" font-size="21">③ 自力で運べる？</text>
+    <rect x="845" y="202" width="275" height="278" rx="24" fill="#20252b"/>
+    <text x="877" y="252" font-size="25" font-weight="700" fill="white">分けて備える</text>
+    <text x="877" y="310" font-size="20" fill="#f7f4ee">持ち出し袋</text>
+    <text x="877" y="344" font-size="16" fill="#cbd0d4">避難直後の最小限</text>
+    <text x="877" y="397" font-size="20" fill="#f7f4ee">自宅備蓄</text>
+    <text x="877" y="431" font-size="16" fill="#cbd0d4">水・食料・生活用品</text>
+  </g>
+</svg>

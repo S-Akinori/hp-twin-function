@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720">
+  <rect width="1200" height="720" fill="#171a18"/><text x="70" y="90" font-family="sans-serif" font-size="42" font-weight="700" fill="#fff">非常持ち出し袋の容量目安</text>
+  <g font-family="sans-serif"><rect x="80" y="170" width="280" height="390" rx="42" fill="#f6cd4c"/><path d="M155 265h130v220H155z" fill="#262a27"/><path d="M180 265c0-65 80-65 80 0" fill="none" stroke="#262a27" stroke-width="24"/><text x="150" y="620" font-size="36" font-weight="700" fill="#fff">20〜25L</text><text x="112" y="660" font-size="22" fill="#d8ddd9">小柄な人・短時間避難</text>
+  <rect x="460" y="130" width="300" height="430" rx="42" fill="#e6b63a"/><path d="M535 225h150v260H535z" fill="#262a27"/><path d="M565 225c0-75 90-75 90 0" fill="none" stroke="#262a27" stroke-width="26"/><text x="535" y="620" font-size="36" font-weight="700" fill="#fff">25〜35L</text><text x="505" y="660" font-size="22" fill="#d8ddd9">大人1人の基本目安</text>
+  <rect x="860" y="90" width="260" height="470" rx="42" fill="#d39d25"/><path d="M920 195h140v290H920z" fill="#262a27"/><path d="M945 195c0-78 90-78 90 0" fill="none" stroke="#262a27" stroke-width="26"/><text x="920" y="620" font-size="36" font-weight="700" fill="#fff">35L以上</text><text x="892" y="660" font-size="22" fill="#d8ddd9">家族用品・冬季向け</text></g>
+  <text x="70" y="700" font-family="sans-serif" font-size="18" fill="#9fa7a1">容量は目安。水や備蓄すべてを持ち出さず、実際に背負って歩ける重さを優先。</text>
+</svg>

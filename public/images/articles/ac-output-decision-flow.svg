@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="t d">
+  <title id="t">AC出力が必要か判断するフローチャート</title><desc id="d">使いたい機器にコンセントが必要か、USB-Cで代替できるか、消費電力が定格出力内かを順に確認する図</desc>
+  <rect width="1200" height="720" rx="36" fill="#f5f1e8"/>
+  <text x="600" y="72" text-anchor="middle" font-family="sans-serif" font-size="38" font-weight="700" fill="#202522">AC出力、本当に必要？</text>
+  <g font-family="sans-serif" text-anchor="middle">
+    <rect x="390" y="112" width="420" height="88" rx="20" fill="#202522"/><text x="600" y="165" font-size="26" fill="white">使いたい機器はコンセント式？</text>
+    <path d="M600 200v52" stroke="#6a716c" stroke-width="5"/><path d="M585 238l15 18 15-18" fill="none" stroke="#6a716c" stroke-width="5"/>
+    <rect x="390" y="258" width="420" height="88" rx="20" fill="white" stroke="#d6cec0" stroke-width="3"/><text x="600" y="311" font-size="25" fill="#202522">USB-C PDで代替できる？</text>
+    <text x="330" y="303" font-size="22" fill="#5b635e">いいえ</text><path d="M390 302H205v74" fill="none" stroke="#6a716c" stroke-width="4"/><path d="M190 362l15 18 15-18" fill="none" stroke="#6a716c" stroke-width="4"/>
+    <rect x="70" y="382" width="270" height="116" rx="20" fill="#dbeadf"/><text x="205" y="430" font-size="27" font-weight="700" fill="#234530">AC出力は不要</text><text x="205" y="466" font-size="20" fill="#234530">USB出力モデルが軽くて効率的</text>
+    <text x="850" y="303" font-size="22" fill="#5b635e">できない</text><path d="M810 302h185v74" fill="none" stroke="#6a716c" stroke-width="4"/><path d="M980 362l15 18 15-18" fill="none" stroke="#6a716c" stroke-width="4"/>
+    <rect x="860" y="382" width="270" height="116" rx="20" fill="#f6dfb6"/><text x="995" y="430" font-size="27" font-weight="700" fill="#5e4218">AC出力を検討</text><text x="995" y="466" font-size="20" fill="#5e4218">W数と波形を確認</text>
+    <path d="M995 498v54" stroke="#6a716c" stroke-width="4"/><path d="M980 538l15 18 15-18" fill="none" stroke="#6a716c" stroke-width="4"/>
+    <rect x="770" y="560" width="450" height="104" rx="20" fill="#fff" stroke="#d6cec0" stroke-width="3"/><text x="995" y="603" font-size="23" font-weight="700" fill="#202522">定格出力 ＞ 機器の最大消費電力</text><text x="995" y="638" font-size="19" fill="#5b635e">モーター・ヒーターは起動電力も確認</text>
+  </g>
+</svg>
