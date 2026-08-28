@@ -26,6 +26,7 @@ export const wifiUsageSteps: ManualStep[] = [
     title: "裏面のスライドカバーを外し乾電池を入れる",
     text: "裏面のスライドカバーを外し、乾電池を3つ入れます。",
     notes: [
+      "故障を防ぐため、乾電池は必ずマイナス（−）側から入れてください。",
       "アルカリ乾電池またはニッケル水素電池を使用してください。",
       "普段使いではニッケル水素電池の利用を推奨します。",
     ],
@@ -97,6 +98,7 @@ export const chargerUsageSteps: ManualStep[] = [
     no: "1",
     title: "スイッチをUSBに入れる",
     text: "乾電池を入れた後、スイッチを「USB」に入れます。",
+    notes: ["故障を防ぐため、乾電池は必ずマイナス（−）側から入れてください。"],
     images: ["/assets/manual/manual3.jpg"],
   },
   {
