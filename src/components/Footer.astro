@@ -2,8 +2,6 @@
 import { assets, navItems, specs } from "../data/site";
 import ButtonLink from "./ui/ButtonLink.astro";
 
-const path = Astro.url.pathname;
-const isHome = path === "/";
 const resolveHref = (href: string) => href;
 ---
 
@@ -13,14 +11,14 @@ const resolveHref = (href: string) => href;
 
   <div class="relative mx-auto grid max-w-[1680px] gap-12 px-5 py-14 sm:px-8 lg:grid-cols-[1.05fr_0.72fr_0.9fr] lg:px-16 lg:py-20">
     <div>
-      <a href={isHome ? "#top" : "/"} class="flex items-center gap-4 text-2xl font-semibold text-white">
+      <a href="/" class="flex items-center gap-4 text-2xl font-semibold text-white">
         <span class="relative block h-9 w-11 rounded border border-white/65 before:absolute before:-right-2 before:-top-2 before:h-9 before:w-11 before:rounded before:border before:border-white/35"></span>
         <span>Twin Function</span>
       </a>
       <p class="mt-7 max-w-md text-lg leading-8 text-white/68">
         Wi-Fi搭載の乾電池式モバイルバッテリー。日常にも、もしもの時にも、乾電池3本で使える備えを。
       </p>
-      <ButtonLink class="mt-8 gap-3 px-8 py-4 text-base" href={isHome ? "#purchase" : "/#purchase"}>
+      <ButtonLink class="mt-8 gap-3 px-8 py-4 text-base" href="/purchase">
         <img class="h-7 w-7 object-contain" src={assets.purchaseCartIcon} alt="" />
         購入する
       </ButtonLink>

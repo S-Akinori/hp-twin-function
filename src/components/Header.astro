@@ -17,7 +17,7 @@ const resolveHref = (href: string) => href;
       <div class="hidden items-center gap-10 text-base font-semibold text-white/88 lg:flex">
         {navItems.map((item) => <a class="transition hover:text-gold-400" href={resolveHref(item.href)}>{item.label}</a>)}
       </div>
-      <ButtonLink href={isHome ? "#purchase" : "/#purchase"} class="hidden gap-2 px-9 py-3.5 text-base lg:inline-flex">
+      <ButtonLink href="/purchase" class="hidden gap-2 px-9 py-3.5 text-base lg:inline-flex">
         <img class="h-6 w-6 object-contain" src={assets.purchaseCartIcon} alt="" />
         購入する
       </ButtonLink>
@@ -57,7 +57,7 @@ const resolveHref = (href: string) => href;
         ))}
       </div>
       <div class="mt-10">
-        <ButtonLink href={isHome ? "#purchase" : "/#purchase"} class="mobile-menu-item mt-7 w-full translate-y-5 justify-center gap-3 px-8 py-5 text-lg opacity-0">
+        <ButtonLink href="/purchase" class="mobile-menu-item mt-7 w-full translate-y-5 justify-center gap-3 px-8 py-5 text-lg opacity-0">
           <img class="h-7 w-7 object-contain" src={assets.purchaseCartIcon} alt="" />
           購入する
         </ButtonLink>

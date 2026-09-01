@@ -262,20 +262,48 @@ export const purchaseFeatures = [
   { label: "最大8台接続", icon: "/assets/icons/10_phone.png" },
 ];
 
-export const purchasePlans = [
+export const purchaseProducts = [
   {
+    id: "twin-function",
+    name: "Twin Function",
+    description: "Wi-Fi搭載 乾電池式モバイルバッテリー",
+    price: 26000,
+    image: "/assets/visuals/01_product_device_single.png",
+    note: "単3形乾電池3本で動作 / 最大8台接続",
+  },
+];
+
+export const simPlans = [
+  {
+    id: "no-sim",
     name: "SIMなし",
-    description: "本体のみ",
-    price: "26,000",
-    purchaseLabel: "本体のみを購入する",
-    purchaseUrl: "https://buy.stripe.com/bJe9AT3l62WT6Py2lefAc02",
+    description: "お手持ちの対応SIMを利用する方に",
+    allowance: "本体のみ",
+    price: 0,
+    badge: "契約不要",
   },
   {
-    name: "SIMあり",
-    description: "本体＋SIMカード（100GB／360日）",
-    price: "34,600",
-    purchaseLabel: "SIM付きを購入する",
-    purchaseUrl: "https://buy.stripe.com/dRm28rcVG2WT5Lue3WfAc01",
+    id: "100gb-360days",
+    name: "100GB / 360日",
+    description: "届いたらすぐに通信を始めたい方に",
+    allowance: "SIMカード付き",
+    price: 8600,
+    badge: "おすすめ",
+  },
+];
+
+export const purchaseCheckouts: Record<string, string> = {
+  "twin-function:no-sim": "https://buy.stripe.com/bJe9AT3l62WT6Py2lefAc02",
+  "twin-function:100gb-360days": "https://buy.stripe.com/dRm28rcVG2WT5Lue3WfAc01",
+};
+
+export const additionalPurchaseItems = [
+  {
+    id: "additional-sim",
+    name: "追加用SIM",
+    description: "Twin Function本体をすでにお持ちの方に。SIMカードのみ追加で購入できます。",
+    note: "本体は付属しません",
+    purchaseUrl: "https://buy.stripe.com/4gMdR9g7S8hdei05xqfAc03",
   },
 ];
 

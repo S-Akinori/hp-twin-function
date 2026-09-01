@@ -1,0 +1,142 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { additionalPurchaseItems, purchaseCheckouts, purchaseFeatures, purchaseProducts, simPlans } from "../data/site";
+
+const formatPrice = (price: number) => new Intl.NumberFormat("ja-JP").format(price);
+const defaultProduct = purchaseProducts[0];
+const defaultPlan = simPlans[0];
+const defaultTotal = defaultProduct.price + defaultPlan.price;
+---
+
+<BaseLayout
+  title="購入 | Twin Function"
+  description="Twin Function本体と、使い方に合うSIMプランを選んで購入できます。"
+>
+  <main class="min-h-[100dvh] bg-[radial-gradient(circle_at_82%_8%,rgba(255,208,41,0.09),transparent_25rem),radial-gradient(circle_at_8%_58%,rgba(73,116,181,0.28),transparent_34rem),#050b15] pb-24 pt-32">
+    <form class="section-shell" data-purchase-form>
+      <header class="max-w-3xl">
+        <p class="eyebrow">PURCHASE</p>
+        <h1 class="mt-5 text-4xl font-semibold leading-tight tracking-tight text-white sm:text-6xl">必要なものを、<br class="hidden sm:block" />順番に選ぶ。</h1>
+        <p class="mt-6 text-base leading-8 text-white/65 sm:text-lg">本体とSIMプランを選択すると、合計金額と購入内容が自動で更新されます。SIMなしでも購入できます。</p>
+      </header>
+
+      <div class="mt-14 grid gap-10 lg:grid-cols-[minmax(0,1fr)_24rem] lg:items-start xl:gap-16">
+        <div class="grid gap-14">
+          <fieldset>
+            <legend class="flex w-full items-center gap-4 border-b border-white/12 pb-5">
+              <span class="grid h-9 w-9 place-items-center rounded-full bg-gold-400 text-sm font-bold text-ink-950">1</span>
+              <span class="text-2xl font-semibold text-white">本体を選ぶ</span>
+            </legend>
+            <div class="mt-6 grid gap-4">
+              {purchaseProducts.map((product) => (
+                <label class="group grid cursor-pointer gap-5 rounded-xl border border-white/14 bg-white/[0.035] p-5 transition duration-300 hover:border-gold-400/45 sm:grid-cols-[9rem_1fr_auto] sm:items-center sm:p-6 has-[:checked]:border-gold-400 has-[:checked]:bg-gold-400/[0.07]">
+                  <input class="peer sr-only" type="radio" name="product" value={product.id} data-name={product.name} data-price={product.price} checked={product.id === defaultProduct.id} />
+                  <div class="grid h-36 place-items-center rounded-lg bg-[radial-gradient(circle,rgba(91,139,207,0.2),transparent_68%)]">
+                    <img class="h-32 w-full object-contain transition duration-500 group-hover:scale-[1.035]" src={product.image} alt={product.name} />
+                  </div>
+                  <div>
+                    <p class="text-2xl font-semibold text-white">{product.name}</p>
+                    <p class="mt-2 text-base leading-7 text-white/62">{product.description}</p>
+                    <p class="mt-3 text-sm text-gold-400">{product.note}</p>
+                  </div>
+                  <p class="text-right text-2xl font-semibold text-white">¥{formatPrice(product.price)}<span class="ml-1 text-xs font-normal text-white/50">税込</span></p>
+                </label>
+              ))}
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend class="flex w-full items-center gap-4 border-b border-white/12 pb-5">
+              <span class="grid h-9 w-9 place-items-center rounded-full bg-gold-400 text-sm font-bold text-ink-950">2</span>
+              <span class="text-2xl font-semibold text-white">SIMプランを選ぶ</span>
+            </legend>
+            <div class="mt-6 grid gap-4 md:grid-cols-2">
+              {simPlans.map((plan) => (
+                <label class="group relative flex min-h-56 cursor-pointer flex-col rounded-xl border border-white/14 bg-white/[0.035] p-6 transition duration-300 hover:-translate-y-0.5 hover:border-gold-400/45 has-[:checked]:border-gold-400 has-[:checked]:bg-gold-400/[0.07] active:translate-y-0">
+                  <input class="peer sr-only" type="radio" name="sim" value={plan.id} data-name={plan.name} data-allowance={plan.allowance} data-price={plan.price} checked={plan.id === defaultPlan.id} />
+                  <div class="flex items-start justify-between gap-4">
+                    <span class="rounded-full border border-gold-400/35 px-3 py-1 text-xs font-bold text-gold-400">{plan.badge}</span>
+                    <span class="grid h-6 w-6 place-items-center rounded-full border border-white/35 transition peer-checked:border-gold-400 peer-checked:bg-gold-400" aria-hidden="true"><span class="h-2 w-2 rounded-full bg-ink-950 opacity-0 peer-checked:opacity-100"></span></span>
+                  </div>
+                  <p class="mt-7 text-2xl font-semibold text-white">{plan.name}</p>
+                  <p class="mt-2 text-sm text-white/48">{plan.allowance}</p>
+                  <p class="mt-3 flex-1 text-base leading-7 text-white/62">{plan.description}</p>
+                  <p class="mt-6 text-right text-2xl font-semibold text-white">{plan.price === 0 ? "追加料金なし" : `+ ¥${formatPrice(plan.price)}`}</p>
+                </label>
+              ))}
+            </div>
+            <p class="mt-4 text-sm leading-6 text-white/45">通信エリアや利用条件は、ご購入前に各プランの案内をご確認ください。</p>
+          </fieldset>
+        </div>
+
+        <aside class="rounded-2xl border border-white/16 bg-ink-950/80 p-6 shadow-[0_28px_70px_-35px_rgba(0,0,0,0.75)] backdrop-blur-xl lg:sticky lg:top-28" aria-live="polite">
+          <p class="text-sm font-semibold tracking-[0.18em] text-white/45">ご注文内容</p>
+          <dl class="mt-6 grid gap-5 text-sm">
+            <div class="flex items-start justify-between gap-4"><dt class="text-white/48">本体</dt><dd class="text-right font-semibold text-white" data-summary-product>{defaultProduct.name}</dd></div>
+            <div class="flex items-start justify-between gap-4"><dt class="text-white/48">SIM</dt><dd class="text-right font-semibold text-white"><span data-summary-sim>{defaultPlan.name}</span><span class="mt-1 block text-xs font-normal text-white/42" data-summary-allowance>{defaultPlan.allowance}</span></dd></div>
+          </dl>
+          <div class="mt-7 border-t border-white/12 pt-6">
+            <div class="flex items-end justify-between gap-4">
+              <span class="pb-1 text-sm text-white/55">合計（税込）</span>
+              <p class="text-4xl font-semibold tracking-tight text-white">¥<span data-summary-total>{formatPrice(defaultTotal)}</span></p>
+            </div>
+            <a class="yellow-button mt-6 w-full gap-3 py-4 text-base" href={purchaseCheckouts[`${defaultProduct.id}:${defaultPlan.id}`]} data-checkout-link>選択内容で購入する<span aria-hidden="true">→</span></a>
+            <p class="mt-4 text-center text-xs leading-5 text-white/40">購入手続きはStripeの安全な決済ページで行います。</p>
+          </div>
+          <div class="mt-7 grid grid-cols-3 gap-2 border-t border-white/12 pt-6 text-center">
+            {purchaseFeatures.map((feature) => <div><img class="mx-auto h-8 w-8 object-contain" src={feature.icon} alt="" /><p class="mt-2 text-[11px] leading-4 text-white/50">{feature.label}</p></div>)}
+          </div>
+        </aside>
+      </div>
+
+      <section class="mt-20 border-t border-white/12 pt-12" aria-labelledby="additional-purchase-title">
+        <div class="grid gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
+          <div>
+            <p class="eyebrow">ADDITIONAL SIM</p>
+            <h2 id="additional-purchase-title" class="mt-4 text-3xl font-semibold leading-tight text-white sm:text-4xl">SIMだけを追加する。</h2>
+            <p class="mt-4 max-w-md text-base leading-7 text-white/58">Twin Function本体をお持ちの場合は、こちらからSIMカードのみ購入できます。</p>
+          </div>
+          <div class="grid gap-4">
+            {additionalPurchaseItems.map((item) => (
+              <article class="grid gap-6 rounded-xl border border-white/14 bg-white/[0.035] p-6 sm:grid-cols-[1fr_auto] sm:items-center sm:p-8">
+                <div>
+                  <div class="flex flex-wrap items-center gap-3">
+                    <h3 class="text-2xl font-semibold text-white">{item.name}</h3>
+                    <span class="rounded-full border border-white/20 px-3 py-1 text-xs font-semibold text-white/55">{item.note}</span>
+                  </div>
+                  <p class="mt-3 max-w-2xl text-base leading-7 text-white/60">{item.description}</p>
+                </div>
+                <a class="yellow-button w-full gap-3 px-8 py-4 text-base sm:w-auto" href={item.purchaseUrl}>SIMのみ購入する<span aria-hidden="true">→</span></a>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+    </form>
+  </main>
+</BaseLayout>
+
+<script is:inline define:vars={{ purchaseCheckouts }}>
+  const form = document.querySelector("[data-purchase-form]");
+  const priceFormatter = new Intl.NumberFormat("ja-JP");
+
+  const updateSummary = () => {
+    if (!(form instanceof HTMLFormElement)) return;
+    const product = form.querySelector('input[name="product"]:checked');
+    const sim = form.querySelector('input[name="sim"]:checked');
+    if (!(product instanceof HTMLInputElement) || !(sim instanceof HTMLInputElement)) return;
+
+    const productName = form.querySelector("[data-summary-product]");
+    const simName = form.querySelector("[data-summary-sim]");
+    const allowance = form.querySelector("[data-summary-allowance]");
+    const total = form.querySelector("[data-summary-total]");
+    const checkout = form.querySelector("[data-checkout-link]");
+    if (productName) productName.textContent = product.dataset.name || "";
+    if (simName) simName.textContent = sim.dataset.name || "";
+    if (allowance) allowance.textContent = sim.dataset.allowance || "";
+    if (total) total.textContent = priceFormatter.format(Number(product.dataset.price) + Number(sim.dataset.price));
+    if (checkout instanceof HTMLAnchorElement) checkout.href = purchaseCheckouts[`${product.value}:${sim.value}`] || "#";
+  };
+
+  form?.addEventListener("change", updateSummary);
+</script>
