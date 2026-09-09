@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">iPhone用モバイルバッテリーの容量選び</title>
+  <desc id="desc">5000mAh、10000mAh、20000mAhの向いている用途を比較する図</desc>
+  <rect width="1200" height="675" rx="36" fill="#0f223d"/>
+  <text x="64" y="84" font-family="Noto Sans JP, sans-serif" font-size="38" font-weight="700" fill="#ffffff">容量は「外出時間」と「充電したい回数」で選ぶ</text>
+  <text x="64" y="128" font-family="Noto Sans JP, sans-serif" font-size="21" fill="#b9c8d9">表示容量のすべてをiPhoneへ移せるわけではないため、余裕を持たせるのがコツです</text>
+  <g transform="translate(64 184)">
+    <rect width="328" height="382" rx="28" fill="#ffffff"/>
+    <rect x="34" y="34" width="92" height="126" rx="18" fill="#dcecff"/><rect x="126" y="74" width="34" height="46" rx="10" fill="#73aef0"/>
+    <text x="34" y="214" font-family="Noto Sans JP, sans-serif" font-size="34" font-weight="800" fill="#10233f">5,000mAh</text>
+    <text x="34" y="256" font-family="Noto Sans JP, sans-serif" font-size="22" font-weight="700" fill="#2878d0">軽さを優先</text>
+    <text x="34" y="299" font-family="Noto Sans JP, sans-serif" font-size="18" fill="#516174">通勤・通学、短時間の外出</text>
+    <text x="34" y="330" font-family="Noto Sans JP, sans-serif" font-size="18" fill="#516174">「夕方まであと少し」に最適</text>
+    <text x="34" y="359" font-family="Noto Sans JP, sans-serif" font-size="15" fill="#7b8997">大型機種は満充電1回未満も</text>
+  </g>
+  <g transform="translate(436 184)">
+    <rect width="328" height="382" rx="28" fill="#ffffff" stroke="#55d190" stroke-width="5"/>
+    <rect x="34" y="34" width="116" height="126" rx="18" fill="#daf6e7"/><rect x="150" y="74" width="34" height="46" rx="10" fill="#55d190"/>
+    <text x="34" y="214" font-family="Noto Sans JP, sans-serif" font-size="34" font-weight="800" fill="#10233f">10,000mAh</text>
+    <text x="34" y="256" font-family="Noto Sans JP, sans-serif" font-size="22" font-weight="700" fill="#17834b">迷ったらこれ</text>
+    <text x="34" y="299" font-family="Noto Sans JP, sans-serif" font-size="18" fill="#516174">1日外出、旅行、動画・撮影</text>
+    <text x="34" y="330" font-family="Noto Sans JP, sans-serif" font-size="18" fill="#516174">容量と携帯性のバランス型</text>
+    <rect x="198" y="38" width="96" height="34" rx="17" fill="#17834b"/>
+    <text x="246" y="61" text-anchor="middle" font-family="Noto Sans JP, sans-serif" font-size="15" font-weight="700" fill="#fff">標準候補</text>
+  </g>
+  <g transform="translate(808 184)">
+    <rect width="328" height="382" rx="28" fill="#ffffff"/>
+    <rect x="34" y="34" width="148" height="126" rx="18" fill="#ffe8d1"/><rect x="182" y="74" width="34" height="46" rx="10" fill="#e58b2b"/>
+    <text x="34" y="214" font-family="Noto Sans JP, sans-serif" font-size="34" font-weight="800" fill="#10233f">20,000mAh</text>
+    <text x="34" y="256" font-family="Noto Sans JP, sans-serif" font-size="22" font-weight="700" fill="#c86c13">長時間・複数台</text>
+    <text x="34" y="299" font-family="Noto Sans JP, sans-serif" font-size="18" fill="#516174">出張、連泊、災害への備え</text>
+    <text x="34" y="330" font-family="Noto Sans JP, sans-serif" font-size="18" fill="#516174">重さとサイズは要チェック</text>
+  </g>
+  <text x="600" y="623" text-anchor="middle" font-family="Noto Sans JP, sans-serif" font-size="18" fill="#b9c8d9">実際の充電回数は、機種・劣化・温度・ケーブル・充電方式によって変わります。</text>
+</svg>

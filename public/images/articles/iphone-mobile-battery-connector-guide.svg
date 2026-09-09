@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">iPhoneの機種別モバイルバッテリー接続方法</title>
+  <desc id="desc">iPhone 15以降はUSB-C、iPhone 14以前はLightning、対応機種はMagSafeも選べることを示す図</desc>
+  <rect width="1200" height="675" rx="36" fill="#f4f6f8"/>
+  <text x="64" y="82" font-family="Noto Sans JP, sans-serif" font-size="38" font-weight="700" fill="#10233f">まずはiPhoneの端子を確認</text>
+  <text x="64" y="124" font-family="Noto Sans JP, sans-serif" font-size="21" fill="#516174">機種に合う接続方法を選べば、買い間違いを防げます</text>
+  <g transform="translate(64 170)">
+    <rect width="328" height="390" rx="28" fill="#ffffff" stroke="#d8e0e8" stroke-width="2"/>
+    <circle cx="164" cy="82" r="50" fill="#e6f1ff"/>
+    <rect x="125" y="59" width="78" height="45" rx="12" fill="#2878d0"/>
+    <rect x="148" y="101" width="32" height="12" rx="6" fill="#2878d0"/>
+    <text x="164" y="168" text-anchor="middle" font-family="Noto Sans JP, sans-serif" font-size="30" font-weight="700" fill="#10233f">iPhone 15以降</text>
+    <text x="164" y="215" text-anchor="middle" font-family="Noto Sans JP, sans-serif" font-size="26" font-weight="700" fill="#2878d0">USB-C</text>
+    <text x="164" y="259" text-anchor="middle" font-family="Noto Sans JP, sans-serif" font-size="19" fill="#516174">USB-Cケーブルまたは</text>
+    <text x="164" y="288" text-anchor="middle" font-family="Noto Sans JP, sans-serif" font-size="19" fill="#516174">端子一体型を選ぶ</text>
+    <rect x="58" y="321" width="212" height="42" rx="21" fill="#10233f"/>
+    <text x="164" y="349" text-anchor="middle" font-family="Noto Sans JP, sans-serif" font-size="17" font-weight="700" fill="#fff">USB PD対応がおすすめ</text>
+  </g>
+  <g transform="translate(436 170)">
+    <rect width="328" height="390" rx="28" fill="#ffffff" stroke="#d8e0e8" stroke-width="2"/>
+    <circle cx="164" cy="82" r="50" fill="#fff0df"/>
+    <path d="M143 49h42v67h-42z" fill="#e58b2b"/><rect x="151" y="39" width="26" height="16" rx="6" fill="#e58b2b"/>
+    <text x="164" y="168" text-anchor="middle" font-family="Noto Sans JP, sans-serif" font-size="30" font-weight="700" fill="#10233f">iPhone 14以前</text>
+    <text x="164" y="215" text-anchor="middle" font-family="Noto Sans JP, sans-serif" font-size="26" font-weight="700" fill="#e58b2b">Lightning</text>
+    <text x="164" y="259" text-anchor="middle" font-family="Noto Sans JP, sans-serif" font-size="19" fill="#516174">USB-C－Lightning</text>
+    <text x="164" y="288" text-anchor="middle" font-family="Noto Sans JP, sans-serif" font-size="19" fill="#516174">ケーブルを用意</text>
+    <rect x="47" y="321" width="234" height="42" rx="21" fill="#10233f"/>
+    <text x="164" y="349" text-anchor="middle" font-family="Noto Sans JP, sans-serif" font-size="17" font-weight="700" fill="#fff">機種変更後の端子も考慮</text>
+  </g>
+  <g transform="translate(808 170)">
+    <rect width="328" height="390" rx="28" fill="#ffffff" stroke="#d8e0e8" stroke-width="2"/>
+    <circle cx="164" cy="82" r="50" fill="#e5f7ed"/>
+    <circle cx="164" cy="82" r="31" fill="none" stroke="#23a363" stroke-width="9"/><rect x="157" y="45" width="14" height="21" rx="7" fill="#23a363"/>
+    <text x="164" y="168" text-anchor="middle" font-family="Noto Sans JP, sans-serif" font-size="30" font-weight="700" fill="#10233f">対応機種</text>
+    <text x="164" y="215" text-anchor="middle" font-family="Noto Sans JP, sans-serif" font-size="26" font-weight="700" fill="#23a363">MagSafe / Qi2</text>
+    <text x="164" y="259" text-anchor="middle" font-family="Noto Sans JP, sans-serif" font-size="19" fill="#516174">磁力で背面に装着</text>
+    <text x="164" y="288" text-anchor="middle" font-family="Noto Sans JP, sans-serif" font-size="19" fill="#516174">ケーブルなしで充電</text>
+    <rect x="49" y="321" width="230" height="42" rx="21" fill="#10233f"/>
+    <text x="164" y="349" text-anchor="middle" font-family="Noto Sans JP, sans-serif" font-size="17" font-weight="700" fill="#fff">対応モデル・ケースを確認</text>
+  </g>
+  <text x="600" y="622" text-anchor="middle" font-family="Noto Sans JP, sans-serif" font-size="18" fill="#68788a">※端子とワイヤレス充電の対応状況は、購入前にApple・製品メーカーの最新情報をご確認ください。</text>
+</svg>

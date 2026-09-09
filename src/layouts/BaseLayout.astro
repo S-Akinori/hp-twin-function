@@ -100,7 +100,9 @@ const {
               {
                 root: null,
                 rootMargin: "0px 0px -14% 0px",
-                threshold: 0.16,
+                // A percentage threshold can never be reached by sections that
+                // are much taller than the viewport, such as the blog archive.
+                threshold: 0,
               },
             );
 
